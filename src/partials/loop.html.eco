@@ -17,10 +17,13 @@
         <img class="author-thumb" src="<%= @author.img %>" alt="<%= @author.name %>" nopin="nopin" />
       <% end %>
       <%- @partial('author') %>
+        <span class="post-date">
       <% if page.tags: %>
         <%- @partial('tags', {tags: page.tags}) %>
       <% end %>
+        </span>
       <time class="post-date" datetime="<%= @time(page.postDate, 'YYYY-MMMM-DD') %>"><%= @time(page.postDate, 'DD MMMM YYYY') %></time>
+        <a  class="post-date" href="http://example.com/bar.html#disqus_thread">0 Comments</a>
     </footer>
 </article>
 <% end %>

@@ -9,7 +9,7 @@ docpadConfig = {
             tagline: 'What\'s a computer?',
             description: 'I possibly might say something useful every once and awhile.',
             logo: '/img/logo.png',
-            url: '',
+            url: 'http://ruairitobrien.github.io/',
             cover: '/img/cover.jpg',
             navigation: [
                 {
@@ -20,22 +20,14 @@ docpadConfig = {
                     name: 'About',
                     href: '/about.html',
                     section: 'about'
-                }, {
-                    name: 'Fiction',
-                    href: '/tags/fiction.html',
-                    section: 'tag-fiction'
-                }, {
-                    name: 'Test Posts',
-                    href: '/tags/test.html',
-                    section: 'tag-test'
                 }
             ]
         },
         author: {
-            name: 'John U. Doe',
-            img: '',
-            url: '/',
-            location: 'Nowhere, IL',
+            name: 'Ruairi O\'Brien',
+            img: '/img/author.jpg',
+            url: '',
+            location: 'Cork, IRL',
             bio: 'I do stuff and things'
         },
         getPreparedTitle: function () {
@@ -108,12 +100,12 @@ docpadConfig = {
                     $ne: true
                 }
             }, {
-                    postDate: -1
-                }).on("add", function (model) {
-                    return model.setMetaDefaults({
-                        layout: "post"
-                    });
+                postDate: -1
+            }).on("add", function (model) {
+                return model.setMetaDefaults({
+                    layout: "post"
                 });
+            });
         }
     },
     plugins: {
@@ -134,6 +126,9 @@ docpadConfig = {
         ghpages: {
             deployRemote: 'target',
             deployBranch: 'master'
+        },
+        cleanurls: {
+            static: true
         }
     }
 };
