@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/favicon.ico">
-    <%- @getBlock("styles").add('/css/screen.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
+    <%- @getBlock("styles").add('/css/screen.css').add('/css/monokai_sublime.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
     <meta name="generator" content="Docpad 6.x" />
     <link rel="alternate" type="application/rss+xml" title="<%= @site.title %>" href="/rss.xml" />
   </head>
@@ -25,6 +25,6 @@
 
     </div>
     <%- @getBlock("scripts").add('//code.jquery.com/jquery-2.1.4.min.js').add('/js/jquery.fitvids.js').add('/js/index.js').toHTML() %>
-    <script id="dsq-count-scr" src="//ruairitobrien.disqus.com/count.js" async></script>    
+    <script id="dsq-count-scr" src="//ruairitobrien.disqus.com/count.js" async></script>
   </body>
 </html>

@@ -16,42 +16,46 @@ I decided to make a blog.
 
 I work as a programmer and I guess my main hobby is programming too so deciding to make a blog brought with it a lot of over thinking about how to begin and surprisingly little about what would be blogged.
 
-Should i sign up to a service like [Wordpress](https://wordpress.com/), [Blogger](https://www.blogger.com/home) or [Medium](https://medium.com/)? They're all nice and quick to get started. It occurred ot me though that I already had accounts with all of them and never used them. For a person who enjoys technology, a place on the internet to call your own is bound to be a good thing and the more control you have over it the better. With that thought in mind, sensing that the ready made options don't fit the bill, what are the options?
+Should i sign up to a service like [Wordpress](https://wordpress.com/), [Blogger](https://www.blogger.com/home) or [Medium](https://medium.com/)? They're all nice and quick to get started. For a person who enjoys technology and works in the software industry, a place on the internet to call your own is bound to be a good thing. The more control you have over it the better. None of the existing services provide a place to call your own in my view. Just like social media, you will create all the content but you must fit their format and be part of the tapestry of that site rather than it being your own place.
 
-Build your own blog of course. Endorphins pumping with the dreams of the amazing creation about to unfold, battered to death by a realistic appraisal of the effort involved. We (developers) all know we **can** build a blog site from scratch. We should know that we shouldn't do it.
+If the existing services aren't the right option, what are the alternatives?
 
-More options. Set up a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) server, install wordpress... Even that is a bit of a pain. You become slave to the database. Managing hosting is no fun and can start to hit the pocket. If you create a blog and you're lucky enough to attract a lot of traffic, you now have scaling issues to worry about.  
+Build your own site of course! One problem here is that it's a lot of work to do that. Sure you could throw something together fairly quickly but watch the hours slip away as you try to add some of the common features on any blog site. We (developers) all know we **can** build a blog site from scratch. In the majority of cases, we really shouldn't do it though.
+
+One option. Set up a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) server, install wordpress... I really don't want to launch in to a long spiel about why I don't like this option but, well, I don't. I don't like managing a database if I don't have to. I like things to be fast and scalable and I don't like dealing with security issues if I don't have to. If you have coding skills, take advantage of them and avoid Wordpress. That is just my opinion though. A lot of people wouldn't agree with me on that.
 
 <h3>Static Site Generators</h3>
 
-While over thinking all this and doing anything but actually starting my blog, I stumbled across static site generators. A novel concept to me. A static site generator is what I went for in the end. Here is a list of reasons why and these are true for the majority of static site generators you may come across, either out of the box or through plugins.
+While over thinking all this and doing anything but actually starting my blog, I stumbled across static site generators. A novel concept to me. I did recognize names like Jekyll and Hexo but never really looked to figure out what they were.
+
+A static site generator is what I went for in the end. Here is a list of reasons why and these are true for the majority of static site generators you may come across, either out of the box or through plugins.
 
 * No database
 * Everything in source control
 * Markdown
 * Full control
 
-<h3>No Database</h3>
+<h4>No Database</h4>
 
-You really don't need one to get a standard blog going. What would you ant it for? Posts and Comments? Posts can be generated. Comments can be done using a third party tool like [Disqus](https://disqus.com/). I'll go in to those two facts in detail later but let me just touch on why you're better off without a database.
+You really don't need one to get a standard blog going. What would you want it for? Posts and Comments? Posts can be generated and stored in source control. Comments can be done using a third party tool like [Disqus](https://disqus.com/). I'll go in to those two facts in detail later but let me just touch on why you're actually better off without a database.
 
-A database is an extra bit of complexity in your life. If you've set up something like Wordpress, you're stuck with that database. If traffic builds you need to figure out how to scale that database. You need to back it up, optimize it etc. etc. It can be slow. Unless you've built some nice caching (OK maybe there's some easy plugins for that in Wordpress, I don't know), every time a user visits your blog, the database will be queried for almost everything the user sees every time they visit a page. Even if that stuff hasn't changed for ages.
+A database is an extra bit of complexity in your life. If you've set up something like Wordpress, you're stuck with a database. If you're lucky and traffic builds up you may need to figure out how to scale that database. You need to back it up, optimize it etc. etc. It can be slow. Unless you've built some nice caching (OK maybe there's some easy plugins for that in Wordpress, I don't know), every time a user visits your blog, the database will be queried for almost everything the user sees every time they visit a page. Even if that stuff hasn't changed for ages.
 
-Databases are great of course but in my experience you should only use one if you absolutely need one. I watched a [great talk](https://www.youtube.com/watch?v=asLUTiJJqdE) by Uncle Bob Martin on architecture where he talked about how the team working on [http://www.fitnesse.org/](Fitnesse) got really hung up on the database design at the beginning of the project. Before they ever wrote code or really explored the use cases, the database was a concern. They decided to use a basic file storage model to prototype the app so they could defer major decisions on the database and actually get some real stuff done. In the end they discovered they didn't actually need a database at all. They made databases a plugin option.
+Databases are great of course but in my experience you should only use one if you absolutely need one. I watched a [great talk](https://www.youtube.com/watch?v=asLUTiJJqdE) by Uncle Bob Martin on architecture where he talked about how the team working on [Fitnesse](http://www.fitnesse.org/) got really hung up on the database design at the beginning of the project. Before they ever wrote code or played around with a prototype, the database was a primary concern. They decided to use a basic file storage method in the beginning so they could defer major decisions on the database and get some something done. In the end they discovered they didn't actually need a database at all. They made databases a plugin option.
 
-<h3>Everything in Source Control</h3>
+<h4>Everything in Source Control</h4>
 
-I just love [https://git-scm.com/](Git). I never once even thought Github and Git were the same thing. Old school Git lover. Using a static site generator, adding content to your site is just adding commits to source control. It's perfect in my opinion. If you have things set up nicely, commit to master and your new blog post is published. You've got a full history. Git is distributed so you'd be very unlucky to loose all your content. What's not to love? Unless you don't like Git. If that's the case though, I have no idea why you've read this far.
+I just love [Git](https://git-scm.com/). I never even once thought Github and Git were the same thing. Old school Git lover. Using a static site generator, adding content to your site is just adding commits to source control. If you have things set up nicely, commit to master and your new blog post is published. You've got a full history. Git is distributed so you would be very unlucky to lose all your content. What's not to love? Unless you don't like Git. That would be..... unfortunate.
 
-<h3>Markdown</h3>
+<h4>Markdown</h4>
 
-Markdown is grand. Simple and fast. If you've written about a million README files then you know all you need to know about that. It's faster than writing plain HTML. If you know it by heart, it's faster than using an editor with some sort of text formatting ribbon at the top. In the end it becomes HTML so you have full control over how it will look.
+Markdown is grand. Simple and fast. If you've written lots of README files for your Github projects then you know all you need to know about that. It's faster than writing plain HTML. If you know it by heart, it's faster than using an editor with some sort of text formatting ribbon at the top. In the end it becomes HTML so you have full control over how it will look.
 
-<h3>Full Control</h3>
+<h4>Full Control</h4>
 
-You really do have full control. With very little learning, once you have how the generator works, it's really easy to use. You could write all this stuff in JaavScript and HTML but the generator automated a lot of it but still leaves you full control over how everything looks, where it goes and what's generated. There's no magic and unless you've picked a very bad tool, there's not much restrictions. Just take a little time to learn more about the tool you choose and it will pay off.
+You really do have full control. With very little learning it's very easy get started with these generators. You could write all this stuff in JavaScript and HTML but the generators automate a lot of it while still leaving you full control over how everything looks, where it goes and what's generated. There's no magic and unless you've picked a very bad tool, there's not much restrictions. Just take a little time to learn more about the tool you choose and it will pay off.
 
-<h2>The Stack</h2>
+<h3>The Stack</h3>
 
 I played around a little with [https://github.com/jekyll/jekyll](Jekyll) and a [http://staticgen.com/](few others) but in the end I settled on [http://docpad.org/](Docpad). It's an excellent tool and I do encourage you to look at their site. I will go through what I needed to do to get it going here.
 
@@ -321,5 +325,135 @@ Date URLS are only used for the specified collection, posts in this case.
 
 <h3>Adding a Post</h3>
 
+Adding a post is pretty much a case of adding a supported file unser the src/remder/posts directory. Right away there are two types of file you can use. There are the coffee script template files that end with .eco, so if you have a post called My First Post, you might call the file my-first-post.html.md.eco. You also have plain markdown files so you might call the file my-first-post.html.md. When you run docpad and it does its magic, the outputted file will be called my-first-post.html in both cases.
+
+Whether you use .eco or markdown, you must begin the file with some [YAML](http://www.yaml.org/start.html) that describes the post. This is parsed by docpad when buildign the posts collection.
+
+
+
+I will only discuss the .eco option for a moment because it's not one I am using yet. In the casper theme, using a .eco file is handy for something like paging. In the generated example template you can see src/render/posts/looking-glass-house.html.md.eco.
+
+In the YAML section, the fact the post is paginated is called out:
+
+isPaged: true
+pageCount: 3
+pageSize: 1
+split: true
+
+The file uses this code:
+<% if @document.page.number is 0: %>
+Some content
+<% else if @document.page.number is 1: %>
+Some more content
+<% end %>
+
+So the post is all defined on one page but when rendered, is paged. Running locally, if you try it out, you'll see the page number in the URL. When you navigate tot he first page it's a normal URL:
+http://localhost:9778/posts/looking-glass-house but once you click on a link to the next page you get a number in the URL: http://localhost:9778/posts/looking-glass-house/2
+
+Besides CoffeeScript templates, you can use Markdown. You can also just stick html tags in your post it seems but markdown is a nice way to create content. If you're not used to markdown you could try this site out http://markdowntutorial.com/. There's more on markdown [here](https://daringfireball.net/projects/markdown/).
+
+When you run docpad it will convert your markdown to HTML.
+
+So let's have a look at a kind of Hello World post that I'll call hello-world.html.md
+
+```
+---
+title: "Hello World"
+cover: '/img/hello-masthead.jpg'
+isPost: true
+active: true
+postDate: 'Tue Jan 26 2016'
+tags:
+ - hello-world
+---
+
+<h3>Hello world</h3>
+
+**Hellooooo!!!!**
+
+Bla bla bla
+
+```
+
+At the top you can see the YAML for the post. These values will be used to create a post object in the post collection and the values can be used for templating, filtering, building URLs etc. In the casper theme, you can see the title being overlayed upon the masthead image (/img/hello-masthead.jpg) and being used around the place the represtend the post. Tags are sued to help filter posts. You can add your own values to the yaml too of course and coe the usage any way you like.
+
+After the YAML seciton you haev your content. In the example above I show a HTML header tag being used with some markdown. This will ultimately be converted to a HTML file in the statically generated site.
+
+If you're going to be adding code snippets in your posts a useful plugin is the [highlightjs plugin](https://github.com/docpad/docpad-plugin-highlightjs).
+
+I love the dark them in the Sublime Text editor (even though I've stopped using the editor for a while now). I descided to use that here so these are the steps I went through to add that them to my code snippets for this blog.
+
+`docpad install highlightjs`
+
+Went here to see what my options are and what they look like: https://highlightjs.org/static/demo/
+
+The styles are all here: https://github.com/isagalaev/highlight.js/tree/8.0/src/styles
+
+Downloaded this file https://github.com/isagalaev/highlight.js/blob/8.0/src/styles/monokai_sublime.css to my src/static/css directory.
+
+in src/layouts/default.html.eco I updated the style block
+<%- @getBlock("styles").add('/css/screen.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
+
+To include the new file:
+
+<%- @getBlock("styles").add('/css/screen.css').add('/css/monokai_sublime.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
+
+
+The result being I get nice syntax colouring like this JavaScript below:
+
+``` Javascript
+function howDoILook() {
+  return 'you look beautiful!';
+}
+```
+
+
 
 <h3>Publishing the Blog</h3>
+
+You can host your static site pretty much anywhere. I wanted a convenient way to publish my blog. Something I could perhaps have happen automatically on commit. I decided to use Github Pages for hosting my site. It's free and great for a static site.
+
+To get that working I used the [docpad ghpages plugin](https://github.com/docpad/docpad-plugin-ghpages). The docs on their page show all you need to do but I'll outline it here anyway.
+
+Install the plugin:
+
+`docpad install ghpages`
+
+Create a repository for your blog on Github. I called mine [ruairitobrien-blog](https://github.com/ruairitobrien/ruairitobrien-blog). Then you need to create a Github repository that follows a particulat naming convention to automaticlaly become your Github Pages site i.e. Guthub will automatically serve up what's in that repository at http://www.{your-github-username}.github.io. If you want your own URL for that you can but I'm not covering that here. The repository just has to use the namin convention {your-github-username}.github.io. Mine is here: https://github.com/ruairitobrien/ruairitobrien.github.io
+
+Why do ou need two repositories? Well, you don't really but you would need docpad to output all the generated static site stuff to the root of your project and that would be a but messy. Better to continue letting docpad put everything in the 'out' directory.
+
+To use the plugin, create a remote called target and set it to your Guthub user name as mentioend here in the docs:
+
+`git remote add target https://github.com/username/username.github.io.git`
+
+So for me it was:
+
+`git remote add target https://github.com/ruairitobrien/ruairitobrien.github.io.git`
+
+
+Then in docpad.js, make sure you configure the plugin in the plugins section:
+
+```Javascript
+ghpages: {
+    deployRemote: 'target',
+    deployBranch: 'master'
+}
+```
+
+So we are telling the plugin to deploy the master branch to the remote repository that was set to target. This doesn't mean that you are deploying your actual code from your master branch to your Github Pages repository. The plugin initializes a git repository in your 'out' directory, commits everything in the out directory and synchronizes that to your Github Pages repository.
+
+TO deploy the app use this command:
+
+```bash
+docpad deploy-ghpages --env static
+```
+
+You might like to set up some kind of continuous deployment with a CI tool (my favourit tool for that kind of stuff is [Codeship](http://codeship.io/)) or a git hook. I won't go in to that now but perhaps in another post.
+
+
+<h3>That's It</h3>
+
+I hope you are convinced of the amazing simplicity and value of using a statci site geenrator like docpad. The amoutn of time it saves and the sheer flexibility adn freedom it offers makes it a great choice to get started and hopefully you've found this useful. Thank you for reading!
+
+Please feel free to drop a comment below if you run in to any issues or have any feedback.
