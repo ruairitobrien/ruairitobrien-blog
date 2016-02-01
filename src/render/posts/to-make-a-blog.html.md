@@ -3,10 +3,6 @@ title: "To Make a Blog"
 cover: '/img/hello-masthead.jpg'
 isPost: true
 active: true
-isPaged: true
-pageCount: 3
-pageSize: 1
-split: true
 excerptOther: 'In the beginning.'
 postDate: 'Tue Jan 26 2016'
 tags:
@@ -93,7 +89,7 @@ npm install -g docpad@6.78
  ```
 should be fine.
 
- <h3>Scaffod the Site</h3>
+ <h3>Scaffold the Site</h3>
 
  Create a new directory for your amazing new site. `cd` in to it and run `docpad run`.
 
@@ -158,7 +154,7 @@ This gives you a lot of code that doesn't come with the 'no skeleton' option. Fo
 
 Picking the Casper theme creates a project with these plugins and dependencies pre-installed:
 
-* docpad-plugin-eco - for coffescript templates
+* docpad-plugin-eco - for CoffeeScript templates
 * docpad-plugin-marked - marked down to html
 * docpad-plugin-paged - to support paging
 * docpad-plugin-partials - to support partials
@@ -265,7 +261,7 @@ rm -rf ./src/static/img/*
 
 If you do delete the images, the site will suddenly look very boring. Finding replacement images may be the hardest thing you ever do. Just a warning.
 
-.eco files are files that use a CoffeScript templating language. See [the project page](https://github.com/sstephenson/eco) for more on that.
+.eco files are files that use a CoffeeScript templating language. See [the project page](https://github.com/sstephenson/eco) for more on that.
 
 Ultimately all these files are processed and put in the 'out' directory. If you've had an out directory created already and you end up removing some files, I've found I had to delete the whole out directory since file processing doesn't appear to remove files that were removed from the src folder.
 
@@ -426,13 +422,13 @@ Downloaded this file https://github.com/isagalaev/highlight.js/blob/8.0/src/styl
 
 in src/layouts/default.html.eco I updated the style block
 
-```coffescript
+```coffeescript
 <%- @getBlock("styles").add('/css/screen.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
 ```
 
 To include the new file:
 
-```coffescript
+```coffeescript
 <%- @getBlock("styles").add('/css/screen.css').add('/css/monokai_sublime.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
 ```
 
@@ -455,7 +451,9 @@ To get that working I used the [docpad ghpages plugin](https://github.com/docpad
 
 Install the plugin:
 
-`docpad install ghpages`
+```bash
+docpad install ghpages
+```
 
 Create a repository for your blog on Github. I called mine [ruairitobrien-blog](https://github.com/ruairitobrien/ruairitobrien-blog). Then you need to create a Github repository that follows a particular naming convention to automatically become your Github Pages site i.e. Guthub will automatically serve up what's in that repository at http://www.{your-github-username}.github.io. If you want your own URL for that you can but I'm not covering that here. The repository just has to use the naming convention {your-github-username}.github.io. Mine is here: https://github.com/ruairitobrien/ruairitobrien.github.io
 
