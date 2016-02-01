@@ -4,7 +4,7 @@ cover: '/img/hello-masthead.jpg'
 isPost: true
 active: true
 excerptOther: 'In the beginning.'
-postDate: 'Tue Jan 26 2016'
+postDate: 'Tue Jan 31 2016'
 tags:
  - first post
  - blog
