@@ -3,6 +3,10 @@ title: "To Make a Blog"
 cover: '/img/hello-masthead.jpg'
 isPost: true
 active: true
+isPaged: true
+pageCount: 3
+pageSize: 1
+split: true
 excerptOther: 'In the beginning.'
 postDate: 'Tue Jan 26 2016'
 tags:
@@ -57,29 +61,37 @@ You really do have full control. With very little learning it's very easy get st
 
 <h3>The Stack</h3>
 
-I played around a little with [https://github.com/jekyll/jekyll](Jekyll) and a [http://staticgen.com/](few others) but in the end I settled on [http://docpad.org/](Docpad). It's an excellent tool and I do encourage you to look at their site. I will go through what I needed to do to get it going here.
+I played around a little with [Jekyll](https://github.com/jekyll/jekyll) and a [few others](http://staticgen.com/) but in the end I settled on [Docpad](http://docpad.org/). It's an excellent tool and I do encourage you to look at their site. I will go through what I needed to do to get it going here.
 
-For source control I use Git and for hosting, at the time of writing I am just using the free service, [https://pages.github.com/](Github pages). Because the site will only have static content, I don't need to worry much about hosting yet at all. Github pages is a nice free option for me.
+For source control I use Git and for hosting, at the time of writing I am using [Github pages](https://pages.github.com/). Because the site will only have static content, I don't need to worry much about hosting. Github pages is a nice free option.
 
-Beyond that we just need a few docpad plugins and we're all set. I'll go through the plugins as we go.
+Beyond that we all that's needed are a few docpad plugins and everything is set.
 
 
 <h2>Build a Blog</h2>
 
-If you want to use the same method I have to build a blog and follow along here, you will need to install [https://nodejs.org/en/](Node.js) if you don't have it already.
+If you want to use the same method I have to build a blog and follow along here, you will need to install [Node.js](https://nodejs.org/) if you don't have it already.
 
 Once installed, you can now install docpad on the command line.
 
 <h3>Install Docpad</h3>
 
-`npm i -g docpad`
+```bash
+npm i -g docpad
+```
 
 On their site instructions they show this as the way to install:
 
+```bash
 npm install -g npm
 npm install -g docpad@6.78
+```
 
- The number may have changed by the time you read this. I really don't know why they suggest a specific number though. Just `npm i -g docpad` should be fine.
+ The number may have changed by the time you read this. I really don't know why they suggest a specific number though. Just
+ ```bash
+ npm i -g docpad
+ ```
+should be fine.
 
  <h3>Scaffod the Site</h3>
 
@@ -87,6 +99,7 @@ npm install -g docpad@6.78
 
  You will get a bunch of output. Here's the beginning of mine:
 
+```bash
 info: Welcome to DocPad v6.78.4 (global installation: /Users/ruairiobrien/.nvm/v4.2.1/lib/node_modules/docpad)
 notice: Please donate to DocPad or have your company sponsor it: http://docpad.org/donate
 info: Contribute: http://docpad.org/docs/contribute
@@ -96,11 +109,13 @@ info: Updating the exchange...
 This can take a moment...
 info: Updated the exchange
 info: You are about to create your new project inside your current directory. Below is a list of skeletons to bootstrap your new project:
+```
 
-This is followed by a list of supported skeletons. You can work without a skeleton. I did give it a go. I was abel to get a simple site up and running but I had to resign to the fact that I'm not a very good designer.
+This is followed by a list of supported skeletons. You can work without a starting skeleton project. I did give it a go. I was able to get a simple site up and running but I had to resign to the fact that I'm not a very good designer.
 
 Here's the list I was shown:
 
+```bash
 Which skeleton will you use? [1-21]
   1.	HTML5 Boilerplate (Supported)
   2.	Casper (Supported)
@@ -123,20 +138,23 @@ Which skeleton will you use? [1-21]
   19.	Zurb Foundation (Unsupported)
   20.	Casteasoft Foundation Simple Blog (Unsupported)
   21.	No Skeleton
+```
 
-I went with number 2, Casper. It gives you a very nice looking theme. Similar to medium or, I believe a direct copy of what the guys at [https://ghost.org/](Ghost) provide.
+I went with number 2, Casper. It gives you a very nice looking theme. Similar to medium or, I believe a direct copy of what the guys at [Ghost](https://ghost.org/) provide.
 
 So, to pick the casper theme, key the number 2 and hit enter. It will take a bit of time but the operation should complete and you should have a skeleton app created.
 
 You;ll see this in the output too which shows what plugins were installed:
 
+```bash
 info: Plugins: eco, marked, paged, partials, rss, tags
 info: Environment: development
 info: Server started on http://0.0.0.0:9778
+```
 
-Now you can naivgate to the skeleton site at http://127.0.0.1:9778. It already looks pretty good.
+Now you can navigate to the skeleton site at http://127.0.0.1:9778. It already looks pretty good.
 
-This gives you a lot of code that doesn't come with the 'no skeleton' option. For the purpose of a blog, this is a good thing I think. Even if you don't like the theme, I'd be inclined to suggest using it anyway and modifying what you need unless you're very comfortable with Docpad already or you really want to start from scratch and have your own specific requirements of how it all should hand together.
+This gives you a lot of code that doesn't come with the 'no skeleton' option. For the purpose of a blog, this is a good thing I think. Even if you don't like the theme, I'd be inclined to suggest using it anyway and modifying what you need unless you're very comfortable with docpad already or you really want to start from scratch and have your own specific requirements of how it all should hand together.
 
 Picking the Casper theme creates a project with these plugins and dependencies pre-installed:
 
@@ -150,29 +168,36 @@ Picking the Casper theme creates a project with these plugins and dependencies p
 
 If you went with the skeleton option you will likely want to add all these anyway.
 
-`npm i moment --save`
-`docpad install eco marked paged partials rss tags`
+```bash
+npm i moment --save
+docpad install eco marked paged partials rss tags
+```
 
-A quick note on `docpa install`.
+A quick note on `docpad install`.
 It's a handy way to install plugins but you can do so without it by simply using npm install for the plugin and updating the docpad config (more on the docpad config later).
 
 <h3>More Plugins</h3>
 
 Before you go crazy creating actual valuable content, let's procrastinate a little and install a few more plugins. We'll just brush over what they are here and install them. We will go in to more detail about configuring them later.
 
-URLs:
+**URLs:**
 
-I a normal web app you might build yourself, you'd probably have routes set up for your view with nice URLs. For example: http://yourblog/2016/01/great-post
-Becasue we have a static site now we have kind of crappy looking URLs. If you started things up on http://127.0.0.1:9778 you might notice the likes of http://127.0.0.1:9778/posts/hello-post.html. My eyes! The humanity!
+I a normal web app, you might build yourself, you'd probably have routes set up for your view with nice URLs. For example: http://yourblog/2016/01/great-post
+Because we have a static site now we have kind of crappy looking URLs. If you started things up on http://127.0.0.1:9778 you might notice the likes of http://127.0.0.1:9778/posts/hello-post.html. My eyes! The humanity!
 
-Luckily there's a couple of plugins that will sort all that out for us. How these plugins work is kind of interesting and while I could go on about it, I'd suggest a glance at the doc [here](https://github.com/docpad/docpad-plugin-cleanurls) if you're interested. We will need to configure these in a bit but for now, while running things locally, just installing them will do, so run this command:
+Luckily there's a couple of plugins that will sort all that out for us. How these plugins work is kind of interesting and while I could go on about it, I'd suggest a glance at the doc [here](https://github.com/docpad/docpad-plugin-cleanurls) if you are interested. We will need to configure these in a bit but for now, while running things locally, just installing them will do, so run this command:
 
-`docpad install cleanurls dateurls`
+```bash
+docpad install cleanurls dateurls
+```
 
+**LiveReload:**
 
 Manually refreshing the browser when you make a change is so old school.
 
-`docpad install livereload`
+```bash
+docpad install livereload
+```
 
 Want more plugin goodness. Check them out [here](http://docpad.org/docs/plugins)
 
@@ -183,8 +208,9 @@ Creating content is so close now we can almost taste it.
 
 Configuration is the last time consuming bit. This is where we dump out all the old boilerplate stuff we don't need for the generated site, configure how it all works and maybe even throw in a 'Hello World' post.
 
-Lets have a quick look at the exisitng folder structure that came with the Casper theme. If you run a find command (exclude 'out', '.git' and 'node_modules') you should see something like this:
+Lets have a quick look at the existing folder structure that came with the Casper theme. If you run a find command (exclude 'out', '.git' and 'node_modules') you should see something like this:
 
+```bash
 ./.gitignore
 ./docpad.coffee
 ./LICENSE
@@ -221,39 +247,41 @@ Lets have a quick look at the exisitng folder structure that came with the Caspe
 ./src/static/img/testimg2.jpg
 ./src/static/js/index.js
 ./src/static/js/jquery.fitvids.js
+```
 
-All our blog post will be in src/render/posts. I'd recommend emptying that folder now. You may have noticed a mix of .md and .md.eco files in there. Docpad allows you to write markdown and have it converted to HTML. The eco files in there are example of a lsighlty more compltex use case with pages.
+All our blog post will be in src/render/posts. I'd recommend emptying that folder now.
 
-./src/render/posts/hello-post.html.md
-./src/render/posts/looking-glass-house.html.md.eco
-./src/render/posts/style-test.html.md
-./src/static/img/bear-masthead.jpg
-./src/static/img/carroll-cover.jpg
-./src/static/img/cover.jpg
-./src/static/img/hello-2-masthead.jpg
-./src/static/img/hello-masthead.jpg
-./src/static/img/logo.png
-./src/static/img/testimg1.jpeg
-./src/static/img/testimg2.jpg
+```bash
+rm -rf ./src/render/posts/*
+```
 
-If you do delete the images, the site will suddenlyvlook very boring. Finding replacement images may be the hardest thing you ever do. Just a warning.
+You may have noticed a mix of .md and .md.eco files in there. Docpad allows you to write markdown and have it converted to HTML. The eco files in there are examples of a slightly more complex use case with pages.
 
-.eco files are files that use a coffescritp templating language. See [the project page](https://github.com/sstephenson/eco) for more on that.
+Remove the images if you like.
 
-Ultimately all these files are processed and put in the 'out' directory. If you've had an out directory created already and you end up removing some files, I've found I had to delete the whole out directory since file processing doesn't appear to remove files that were removed fomr the src folder.
+```bash
+rm -rf ./src/static/img/*
+```
 
-You'll want to keep everything in the layouts folder but here are a list of files that are basically OK to delete. I would delete everything under src/render/posts but the other files I list here are optional and safe to remove if you wish:
+If you do delete the images, the site will suddenly look very boring. Finding replacement images may be the hardest thing you ever do. Just a warning.
 
-I must admit, while I've been tempted a few times, I never took the time to learn CoffeeScript. I probably could have hacked away and figured it out but I just don't plan on learnign CoffeeScript, particuarly wiht ES6 around noe. I really do like JavaScript so I decided to rename docpad.coffee to docpad.js and I ran the contents through a converter. http://js2.coffee/ did the trick for me. If you like CoffeeScri[t, great! Leave it as is. Any snippets I give will be JavaScript but are easily ported over.
+.eco files are files that use a CoffeScript templating language. See [the project page](https://github.com/sstephenson/eco) for more on that.
 
-docpad.js is your main configuration file.
+Ultimately all these files are processed and put in the 'out' directory. If you've had an out directory created already and you end up removing some files, I've found I had to delete the whole out directory since file processing doesn't appear to remove files that were removed from the src folder.
+
+You'll want to keep everything in the layouts folder.
+
+I must admit, while I've been tempted a few times, I never took the time to learn CoffeeScript. It looks fairly straight forward and I probably could have hacked away and figured it out but I just don't plan on learning CoffeeScript. Particularly with ES6 around now. I really do like JavaScript so I decided to rename docpad.coffee to docpad.js and I ran the contents through a converter. http://js2.coffee/ did the trick for me. If you like CoffeeScript, great! Leave it as is.
+
+docpad.js (or docpad.coffee if that's what you stuck with) is your main configuration file.
 
 You will see the configuration object created `docpadConfig`. I'll briefly run through its properties here.
 
 `docpadConfig.templateData`
 
-This is all the stuff that will get injected in to your site. I think most of it is fairly obvious. I decided to trim down the navigation preoprty to this:
+This is all the stuff that will get injected in to your site. I think most of it is fairly obvious. I decided to trim down the navigation property to this:
 
+```javascript
 navigation: [
     {
         name: 'Home',
@@ -265,6 +293,7 @@ navigation: [
         section: 'about'
     }
 ]
+```
 
 The rest of the templateData object is some data and helpers for formatting dates, text, helping with navigation and other useful stuff. You don't get these in the 'no skeleton' version so even if all you used from the Casper theme was the configuration in docpad.js, you'd be saving a bit of time.
 
@@ -272,13 +301,14 @@ Fill in any values you like and we will move on.
 
 `docpadConfig.collections`
 
-For the purposes of a blog, the default collection here is perfect. It goes in to src/render/posts, gets all our posts (our markdown files) as a collection, specifies the layout src/layout/post.html.ect. These get converted to nice HTML files for us in the out directory. The collection can query using the YAML at the start of a post (more on that soon) and the collection can be used in our template code. For example in src/partials/loop.html.eco you can see `<% for page in @getPageCollection("posts").toJSON(): %>`.
+For the purposes of a blog, the default collection here is perfect. It goes in to src/render/posts, gets all our posts (our markdown files) as a collection, specifies the layout src/layout/post.html.ec0. These get converted to nice HTML files for us in the out directory. The collection can query using the YAML at the start of a post (more on that soon) and the collection can be used in our template code. For example in src/partials/loop.html.eco you can see `<% for page in @getPageCollection("posts").toJSON(): %>`.
 
 
 `docpadConfig.plugins`
 
 This where we configure our plugins. Recall we added a few earlier. Here's my entire plugins configuration.
 
+```javascript
 plugins: {
     tags: {
         extension: '.html',
@@ -304,6 +334,7 @@ plugins: {
         dateFormat: '/YYYY/MM'
     }
 }
+```
 
 `plugins.tags`
 Came pre-configured. It seems that when you create a new post with tags in the YAML, the tags plugin will give some features that the Casper theme has sorted out for us.
@@ -315,7 +346,7 @@ Do people still use rss feeds? I don't think I've ever used one. If you're in to
 Remember that cleanurls plugin we installed earlier? The static: true bit says that we want cleanurls when the site is being statically served. We need this when using the likes of Github Pages.
 
 `plugins.dateurls`
-This is where we configure the date bit in a URL, if you want that. Just leave this out if you don't.
+This is where we configure the date bit in a URL if you want that. Just leave this out if you don't.
 Here we're saying, use the cleanurls for posts, no need to put a slash at then end of post links and use the format '/YYYY/MM' so we get a URL like http://yourblog/2016/01/my-post
 
 If you blog every day you might like a format such as '/YYYY/MM/DD'.
@@ -325,13 +356,11 @@ Date URLS are only used for the specified collection, posts in this case.
 
 <h3>Adding a Post</h3>
 
-Adding a post is pretty much a case of adding a supported file unser the src/remder/posts directory. Right away there are two types of file you can use. There are the coffee script template files that end with .eco, so if you have a post called My First Post, you might call the file my-first-post.html.md.eco. You also have plain markdown files so you might call the file my-first-post.html.md. When you run docpad and it does its magic, the outputted file will be called my-first-post.html in both cases.
+Adding a post is pretty much a case of adding a supported file under the src/render/posts directory. Right away there are two types of file you can use. There are the coffee script template files that end with .eco, so if you have a post called My First Post, you might call the file my-first-post.html.md.eco. You also have plain markdown files so you might call the file my-first-post.html.md. When you run docpad and it does its magic, the outputted file will be called my-first-post.html in both cases.
 
-Whether you use .eco or markdown, you must begin the file with some [YAML](http://www.yaml.org/start.html) that describes the post. This is parsed by docpad when buildign the posts collection.
+Whether you use .eco or markdown, you must begin the file with some [YAML](http://www.yaml.org/start.html) that describes the post. This is parsed by docpad when building the posts collection.
 
-
-
-I will only discuss the .eco option for a moment because it's not one I am using yet. In the casper theme, using a .eco file is handy for something like paging. In the generated example template you can see src/render/posts/looking-glass-house.html.md.eco.
+In the casper theme, using a .eco file is handy for something like paging. In the generated example template you can see src/render/posts/looking-glass-house.html.md.eco.
 
 In the YAML section, the fact the post is paginated is called out:
 
@@ -341,11 +370,13 @@ pageSize: 1
 split: true
 
 The file uses this code:
+```coffeescript
 <% if @document.page.number is 0: %>
 Some content
 <% else if @document.page.number is 1: %>
 Some more content
 <% end %>
+```
 
 So the post is all defined on one page but when rendered, is paged. Running locally, if you try it out, you'll see the page number in the URL. When you navigate tot he first page it's a normal URL:
 http://localhost:9778/posts/looking-glass-house but once you click on a link to the next page you get a number in the URL: http://localhost:9778/posts/looking-glass-house/2
@@ -375,15 +406,17 @@ Bla bla bla
 
 ```
 
-At the top you can see the YAML for the post. These values will be used to create a post object in the post collection and the values can be used for templating, filtering, building URLs etc. In the casper theme, you can see the title being overlayed upon the masthead image (/img/hello-masthead.jpg) and being used around the place the represtend the post. Tags are sued to help filter posts. You can add your own values to the yaml too of course and coe the usage any way you like.
+At the top you can see the YAML for the post. These values will be used to create a post object in the post collection and the values can be used for templating, filtering, building URLs etc. In the casper theme, you can see the title being overlaid upon the masthead image (/img/hello-masthead.jpg) and being used around the place the represent the post. Tags are used to help filter posts. You can add your own values to the YAML too of course and code the usage any way you like.
 
-After the YAML seciton you haev your content. In the example above I show a HTML header tag being used with some markdown. This will ultimately be converted to a HTML file in the statically generated site.
+After the YAML section you have your content. In the example above I show a HTML header tag being used with some markdown. This will ultimately be converted to a HTML file in the statically generated site.
 
 If you're going to be adding code snippets in your posts a useful plugin is the [highlightjs plugin](https://github.com/docpad/docpad-plugin-highlightjs).
 
-I love the dark them in the Sublime Text editor (even though I've stopped using the editor for a while now). I descided to use that here so these are the steps I went through to add that them to my code snippets for this blog.
+I love the dark them in the Sublime Text editor (even though I've stopped using the editor for a while now). I decided to use that here so these are the steps I went through to add that them to my code snippets for this blog.
 
-`docpad install highlightjs`
+```bash
+docpad install highlightjs
+```
 
 Went here to see what my options are and what they look like: https://highlightjs.org/static/demo/
 
@@ -392,11 +425,16 @@ The styles are all here: https://github.com/isagalaev/highlight.js/tree/8.0/src/
 Downloaded this file https://github.com/isagalaev/highlight.js/blob/8.0/src/styles/monokai_sublime.css to my src/static/css directory.
 
 in src/layouts/default.html.eco I updated the style block
+
+```coffescript
 <%- @getBlock("styles").add('/css/screen.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
+```
 
 To include the new file:
 
+```coffescript
 <%- @getBlock("styles").add('/css/screen.css').add('/css/monokai_sublime.css').add('//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400').toHTML() %>
+```
 
 
 The result being I get nice syntax colouring like this JavaScript below:
@@ -407,7 +445,7 @@ function howDoILook() {
 }
 ```
 
-
+There's a lot of styles to pick from and you are bound to find one you like. Syntax highlighting is important for the aesthetics of your blog. Maybe some hardcore developers who code review using email might be happy enough to read a blog post without it but most people these days wont even look at a page that doesn't style code a bit as they just take that little bit of extra effort to read.
 
 <h3>Publishing the Blog</h3>
 
@@ -419,11 +457,11 @@ Install the plugin:
 
 `docpad install ghpages`
 
-Create a repository for your blog on Github. I called mine [ruairitobrien-blog](https://github.com/ruairitobrien/ruairitobrien-blog). Then you need to create a Github repository that follows a particulat naming convention to automaticlaly become your Github Pages site i.e. Guthub will automatically serve up what's in that repository at http://www.{your-github-username}.github.io. If you want your own URL for that you can but I'm not covering that here. The repository just has to use the namin convention {your-github-username}.github.io. Mine is here: https://github.com/ruairitobrien/ruairitobrien.github.io
+Create a repository for your blog on Github. I called mine [ruairitobrien-blog](https://github.com/ruairitobrien/ruairitobrien-blog). Then you need to create a Github repository that follows a particular naming convention to automatically become your Github Pages site i.e. Guthub will automatically serve up what's in that repository at http://www.{your-github-username}.github.io. If you want your own URL for that you can but I'm not covering that here. The repository just has to use the naming convention {your-github-username}.github.io. Mine is here: https://github.com/ruairitobrien/ruairitobrien.github.io
 
-Why do ou need two repositories? Well, you don't really but you would need docpad to output all the generated static site stuff to the root of your project and that would be a but messy. Better to continue letting docpad put everything in the 'out' directory.
+Why do you need two repositories? Well, you don't really but you would need docpad to output all the generated static site stuff to the root of your project and that would be a but messy. Better to continue letting docpad put everything in the 'out' directory.
 
-To use the plugin, create a remote called target and set it to your Guthub user name as mentioend here in the docs:
+To use the plugin, create a remote called target and set it to your Guthub user name as mentioned here in the docs:
 
 `git remote add target https://github.com/username/username.github.io.git`
 
@@ -449,11 +487,11 @@ TO deploy the app use this command:
 docpad deploy-ghpages --env static
 ```
 
-You might like to set up some kind of continuous deployment with a CI tool (my favourit tool for that kind of stuff is [Codeship](http://codeship.io/)) or a git hook. I won't go in to that now but perhaps in another post.
+You might like to set up some kind of continuous deployment with a CI tool (my favorite tool for that kind of stuff is [Codeship](http://codeship.io/)) or a git hook. I won't go in to that now but perhaps in another post.
 
 
 <h3>That's It</h3>
 
-I hope you are convinced of the amazing simplicity and value of using a statci site geenrator like docpad. The amoutn of time it saves and the sheer flexibility adn freedom it offers makes it a great choice to get started and hopefully you've found this useful. Thank you for reading!
+I hope you are convinced of the amazing simplicity and value of using a static site generator like docpad. The amount of time it saves and the sheer flexibility and freedom it offers makes it a great choice to get started and hopefully you've found this useful. Thank you for reading!
 
 Please feel free to drop a comment below if you run in to any issues or have any feedback.
