@@ -25,7 +25,7 @@ docpadConfig = {
         },
         author: {
             name: 'Ruairi O\'Brien',
-            img: '/img/author.jpg',
+            img: '/img/rob.jpg',
             url: '',
             location: 'Cork, IRL',
             bio: 'I do stuff and things'

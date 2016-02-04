@@ -4,7 +4,7 @@ cover: '/img/hello-masthead.jpg'
 isPost: true
 active: true
 excerptOther: 'In the beginning.'
-postDate: 'Sun Feb 1 2016'
+postDate: 'Sun Feb 2 2016 GMT'
 tags:
  - first post
  - blog
@@ -461,12 +461,15 @@ Why do you need two repositories? Well, you don't really but you would need docp
 
 To use the plugin, create a remote called target and set it to your Guthub user name as mentioned here in the docs:
 
-`git remote add target https://github.com/username/username.github.io.git`
+```bash
+git remote add target https://github.com/username/username.github.io.git
+```
 
 So for me it was:
 
-`git remote add target https://github.com/ruairitobrien/ruairitobrien.github.io.git`
-
+```bash
+git remote add target https://github.com/ruairitobrien/ruairitobrien.github.io.git
+```
 
 Then in docpad.js, make sure you configure the plugin in the plugins section:
 
