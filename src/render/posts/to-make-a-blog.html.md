@@ -14,21 +14,21 @@ tags:
 
 I decided to make a blog.
 
-I work as a programmer and I guess my main hobby is programming too so deciding to make a blog brought with it a lot of over thinking about how to begin and surprisingly little about what would be blogged.
+I work as a programmer and I guess my main hobby is programming too so my decision to make a blog brought with it a lot of over thinking about how to build the blog and surprisingly little about what would be blogged.
 
-Should i sign up to a service like [Wordpress](https://wordpress.com/), [Blogger](https://www.blogger.com/home) or [Medium](https://medium.com/)? They're all nice and quick to get started. For a person who enjoys technology and works in the software industry, a place on the internet to call your own is bound to be a good thing. The more control you have over it the better. None of the existing services provide a place to call your own in my view. Just like social media, you will create all the content but you must fit their format and be part of the tapestry of that site rather than it being your own place.
+Should I sign up to a service like [Wordpress](https://wordpress.com/), [Blogger](https://www.blogger.com/home) or [Medium](https://medium.com/)? They're all nice and quick to get started. For a person who enjoys technology and works in the software industry, a place on the internet to call your own makes a lot of sense. The more control you have over it the better. None of the existing services provide a place to call your own in my view. Just like social media, you will create all the content but you must fit their format and are just part of the tapestry of their site.
 
 If the existing services aren't the right option, what are the alternatives?
 
-Build your own site of course! One problem here is that it's a lot of work to do that. Sure you could throw something together fairly quickly but watch the hours slip away as you try to add some of the common features on any blog site. We (developers) all know we **can** build a blog site from scratch. In the majority of cases, we really shouldn't do it though.
+Build your own site of course! One problem there is, that's a lot of work. Sure you could throw something together fairly quickly but watch the hours slip away as you try to add some of the common features on any blog site. We (developers) all know we **can** build a blog site from scratch. In the majority of cases, we really shouldn't.
 
-One option. Set up a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) server, install wordpress... I really don't want to launch in to a long spiel about why I don't like this option but, well, I don't. I don't like managing a database if I don't have to. I like things to be fast and scalable and I don't like dealing with security issues if I don't have to. If you have coding skills, take advantage of them and avoid Wordpress. That is just my opinion though. A lot of people wouldn't agree with me on that.
+One option. Set up a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) server, install Wordpress... I really don't want to launch in to a long spiel about why I don't like this option but, well, I don't. I don't like managing a database if I don't have to. I like things to be fast and scalable and I don't like dealing with security issues if I don't have to. If you have coding skills, take advantage of them and avoid Wordpress. That is just my opinion though. A lot of people wouldn't agree with me on that I know.
 
 <h3>Static Site Generators</h3>
 
-While over thinking all this and doing anything but actually starting my blog, I stumbled across static site generators. A novel concept to me. I did recognize names like Jekyll and Hexo but never really looked to figure out what they were.
+While over thinking all this and doing anything but actually starting my blog, I stumbled across static site generators. A novel concept to me. I did recognize names like Jekyll and Hexo but never really looked in to them before.
 
-A static site generator is what I went for in the end. Here is a list of reasons why and these are true for the majority of static site generators you may come across, either out of the box or through plugins.
+A static site generator is what I went for in the end to build this blog. Here is a list of reasons why and these are true for the majority of static site generators you may come across, either out of the box or through plugins.
 
 * No database
 * Everything in source control
@@ -45,23 +45,23 @@ Databases are great of course but in my experience you should only use one if yo
 
 <h4>Everything in Source Control</h4>
 
-I just love [Git](https://git-scm.com/). I never even once thought Github and Git were the same thing. Old school Git lover. Using a static site generator, adding content to your site is just adding commits to source control. If you have things set up nicely, commit to master and your new blog post is published. You've got a full history. Git is distributed so you would be very unlucky to lose all your content. What's not to love? Unless you don't like Git. That would be..... unfortunate.
+I just love [Git](https://git-scm.com/). I never even once thought Github and Git were the same thing! I'm an old school Git lover. Using a static site generator, adding content to your site is just adding commits to source control. If you have things set up nicely, commit to master and your new blog post is published. You've got a full history. Git is distributed so you would be very unlucky to lose all your content. What's not to love? Unless you don't like Git. That would be..... unfortunate.
 
 <h4>Markdown</h4>
 
-Markdown is grand. Simple and fast. If you've written lots of README files for your Github projects then you know all you need to know about that. It's faster than writing plain HTML. If you know it by heart, it's faster than using an editor with some sort of text formatting ribbon at the top. In the end it becomes HTML so you have full control over how it will look.
+Markdown is grand. Simple and fast. If you've written lots of README files for your Github projects then you know all you need to know about that. It's faster than writing plain HTML. If you know it by heart, it's faster than using a complex editor with a lot of buttons to learn. In the end it becomes HTML so you have full control over how it will look.
 
 <h4>Full Control</h4>
 
-You really do have full control. With very little learning it's very easy get started with these generators. You could write all this stuff in JavaScript and HTML but the generators automate a lot of it while still leaving you full control over how everything looks, where it goes and what's generated. There's no magic and unless you've picked a very bad tool, there's not much restrictions. Just take a little time to learn more about the tool you choose and it will pay off.
+You really do have full control. With very little learning involved, it's very easy get started with these generators. You could write all this stuff in JavaScript and HTML but the generators automate a lot of it while still leaving you full control over how everything looks, where it goes and what's generated. There's no magic and unless you've picked a very bad tool, there's not much restrictions. Just take a little time to learn more about the tool you choose and it will pay off.
 
-<h3>The Stack</h3>
+<h2>The Stack</h2>
 
 I played around a little with [Jekyll](https://github.com/jekyll/jekyll) and a [few others](http://staticgen.com/) but in the end I settled on [Docpad](http://docpad.org/). It's an excellent tool and I do encourage you to look at their site. I will go through what I needed to do to get it going here.
 
-For source control I use Git and for hosting, at the time of writing I am using [Github pages](https://pages.github.com/). Because the site will only have static content, I don't need to worry much about hosting. Github pages is a nice free option.
+For source control I use Git and for hosting, at the time of writing, I am using [Github pages](https://pages.github.com/). Because the site will only have static content, I don't need to worry much about hosting. Github pages is a nice free option.
 
-Beyond that we all that's needed are a few docpad plugins and everything is set.
+Beyond that, all that's needed are a few docpad plugins and everything is set.
 
 
 <h2>Build a Blog</h2>
@@ -89,7 +89,7 @@ npm install -g docpad@6.78
  ```
 should be fine.
 
- <h3>Scaffold the Site</h3>
+ <h4>Scaffold the Site</h4>
 
  Create a new directory for your amazing new site. `cd` in to it and run `docpad run`.
 
@@ -107,7 +107,7 @@ info: Updated the exchange
 info: You are about to create your new project inside your current directory. Below is a list of skeletons to bootstrap your new project:
 ```
 
-This is followed by a list of supported skeletons. You can work without a starting skeleton project. I did give it a go. I was able to get a simple site up and running but I had to resign to the fact that I'm not a very good designer.
+This is followed by a list of supported skeletons. You can work without a starting skeleton (see option 21 below)). I did give it a go. I was able to get a simple site up and running but I had to resign to the fact that I'm not a very good designer and I would learn more from a template to modify first.
 
 Here's the list I was shown:
 
@@ -138,9 +138,9 @@ Which skeleton will you use? [1-21]
 
 I went with number 2, Casper. It gives you a very nice looking theme. Similar to medium or, I believe a direct copy of what the guys at [Ghost](https://ghost.org/) provide.
 
-So, to pick the casper theme, key the number 2 and hit enter. It will take a bit of time but the operation should complete and you should have a skeleton app created.
+So, to pick the casper theme, key the number 2 and hit enter. It will take a bit of time but the operation should eventually complete and you should have a skeleton app created.
 
-You;ll see this in the output too which shows what plugins were installed:
+You'll see this in the output too which shows what plugins were installed:
 
 ```bash
 info: Plugins: eco, marked, paged, partials, rss, tags
@@ -148,9 +148,9 @@ info: Environment: development
 info: Server started on http://0.0.0.0:9778
 ```
 
-Now you can navigate to the skeleton site at http://127.0.0.1:9778. It already looks pretty good.
+Now you can navigate to the skeleton site at http://127.0.0.1:9778. It already looks pretty good right?
 
-This gives you a lot of code that doesn't come with the 'no skeleton' option. For the purpose of a blog, this is a good thing I think. Even if you don't like the theme, I'd be inclined to suggest using it anyway and modifying what you need unless you're very comfortable with docpad already or you really want to start from scratch and have your own specific requirements of how it all should hand together.
+This gives you a lot of code that doesn't come with the 'no skeleton' option. For the purpose of a blog, this is a good thing I think. Even if you don't like the theme, I'd be inclined to suggest using it anyway and modifying what you need unless you're very comfortable with docpad already or you really want to start from scratch and have your own specific ideas of how it all should hand together.
 
 Picking the Casper theme creates a project with these plugins and dependencies pre-installed:
 
@@ -162,7 +162,7 @@ Picking the Casper theme creates a project with these plugins and dependencies p
 * docpad-plugin-tags - to support tagging
 * moment - date time formatting
 
-If you went with the skeleton option you will likely want to add all these anyway.
+If you went with the 'no skeleton' option you will likely want to add all these anyway.
 
 ```bash
 npm i moment --save
@@ -172,16 +172,22 @@ docpad install eco marked paged partials rss tags
 A quick note on `docpad install`.
 It's a handy way to install plugins but you can do so without it by simply using npm install for the plugin and updating the docpad config (more on the docpad config later).
 
+If you need to remove a plugin you use `docpad uninstall the-plugin-name` so if you wanted to unistall thr rss plugin for example it's:
+
+```bash
+docpad uninstall rss
+```
+
 <h3>More Plugins</h3>
 
-Before you go crazy creating actual valuable content, let's procrastinate a little and install a few more plugins. We'll just brush over what they are here and install them. We will go in to more detail about configuring them later.
+Before you go crazy creating actual valuable content, let's procrastinate a little further and install a few more plugins. We'll just brush over what they are here and install them. We will go in to more detail about configuring them later.
 
 **URLs:**
 
-I a normal web app, you might build yourself, you'd probably have routes set up for your view with nice URLs. For example: http://yourblog/2016/01/great-post
-Because we have a static site now we have kind of crappy looking URLs. If you started things up on http://127.0.0.1:9778 you might notice the likes of http://127.0.0.1:9778/posts/hello-post.html. My eyes! The humanity!
+In a normal web app that you might build yourself, you'd probably have routes set up for your view with nice URLs. For example: http://yourblog/2016/01/great-post
+Because we have a static site now we have kind of crappy looking URLs. If you started things up on http://127.0.0.1:9778 you might notice the likes of http://127.0.0.1:9778/posts/hello-post.html. My eyes! The humanity! What year is this?
 
-Luckily there's a couple of plugins that will sort all that out for us. How these plugins work is kind of interesting and while I could go on about it, I'd suggest a glance at the doc [here](https://github.com/docpad/docpad-plugin-cleanurls) if you are interested. We will need to configure these in a bit but for now, while running things locally, just installing them will do, so run this command:
+Luckily there's a couple of plugins that will sort all that out for us. How these plugins work is kind of interesting and while I could go on about it and probably randomly will, I'd suggest a glance at the doc [here](https://github.com/docpad/docpad-plugin-cleanurls) if you're interested. We will need to configure these in a bit but for now, while running things locally, just installing them will do, so run this command:
 
 ```bash
 docpad install cleanurls dateurls
@@ -194,6 +200,10 @@ Manually refreshing the browser when you make a change is so old school.
 ```bash
 docpad install livereload
 ```
+
+Now when you make a change the brower will refresh automatically.
+
+Or if you prefer, use browsersync. I personally think browsersync is a bit faster and tend to use it over livereload. Note though that by default you will need to access the site on http://localhost:3000 when using browsersync. You can add JSON to your plugin config to use all the standard browsersync configuration options too.
 
 Want more plugin goodness. Check them out [here](http://docpad.org/docs/plugins)
 
@@ -245,27 +255,27 @@ Lets have a quick look at the existing folder structure that came with the Caspe
 ./src/static/js/jquery.fitvids.js
 ```
 
+The template gives you a bunch of sample images. Remove the images if you like.
+
+```bash
+rm -rf ./src/static/img/*
+```
+
+If you do delete the images, the site will suddenly look very boring. Finding replacement images may be the hardest thing you ever do. Just a warning. Also you'll need to update any images links in the template files you keep.
+
 All our blog post will be in src/render/posts. I'd recommend emptying that folder now.
 
 ```bash
 rm -rf ./src/render/posts/*
 ```
 
-You may have noticed a mix of .md and .md.eco files in there. Docpad allows you to write markdown and have it converted to HTML. The eco files in there are examples of a slightly more complex use case with pages.
-
-Remove the images if you like.
-
-```bash
-rm -rf ./src/static/img/*
-```
-
-If you do delete the images, the site will suddenly look very boring. Finding replacement images may be the hardest thing you ever do. Just a warning.
+You may have noticed a mix of .md and .md.eco files in there before. Docpad allows you to write markdown and have it converted to HTML. The .eco files in there are examples of a slightly more complex use case with pages that wouldn't be easily done in just markdown.
 
 .eco files are files that use a CoffeeScript templating language. See [the project page](https://github.com/sstephenson/eco) for more on that.
 
-Ultimately all these files are processed and put in the 'out' directory. If you've had an out directory created already and you end up removing some files, I've found I had to delete the whole out directory since file processing doesn't appear to remove files that were removed from the src folder.
+Ultimately all these files are processed and put in the 'out' directory. If you've had an out directory created already and you end up removing some files, I've found I had to delete the whole out directory since file processing doesn't appear to remove files that were removed from the src folder. That is, deleting a post from src for example, doesn't appear to delete it from the generated output so just deleting the out directory is a quick way to be sure you're in sync.
 
-You'll want to keep everything in the layouts folder.
+You'll likely want to keep everything that's in the layouts folder although you may want to change them a bit. They're straight forward to understand if you give them a quick read.
 
 I must admit, while I've been tempted a few times, I never took the time to learn CoffeeScript. It looks fairly straight forward and I probably could have hacked away and figured it out but I just don't plan on learning CoffeeScript. Particularly with ES6 around now. I really do like JavaScript so I decided to rename docpad.coffee to docpad.js and I ran the contents through a converter. http://js2.coffee/ did the trick for me. If you like CoffeeScript, great! Leave it as is.
 
@@ -297,7 +307,7 @@ Fill in any values you like and we will move on.
 
 `docpadConfig.collections`
 
-For the purposes of a blog, the default collection here is perfect. It goes in to src/render/posts, gets all our posts (our markdown files) as a collection, specifies the layout src/layout/post.html.ec0. These get converted to nice HTML files for us in the out directory. The collection can query using the YAML at the start of a post (more on that soon) and the collection can be used in our template code. For example in src/partials/loop.html.eco you can see `<% for page in @getPageCollection("posts").toJSON(): %>`.
+For the purposes of a blog, the default collection here is perfect. It goes in to src/render/posts, gets all our posts (our markdown files) as a collection, specifies the layout src/layout/post.html.eco. These get converted to nice HTML files for us in the out directory. The collection can query using the YAML at the start of a post (more on that soon) and the collection can be used in our template code. For example in src/partials/loop.html.eco you can see `<% for page in @getPageCollection("posts").toJSON(): %>`.
 
 
 `docpadConfig.plugins`
@@ -328,6 +338,9 @@ plugins: {
         trailingSlashes: false,
         collectionName: 'posts',
         dateFormat: '/YYYY/MM'
+    },
+    browsersync: {
+        open: false
     }
 }
 ```
@@ -349,10 +362,12 @@ If you blog every day you might like a format such as '/YYYY/MM/DD'.
 
 Date URLS are only used for the specified collection, posts in this case.
 
+`plugins.browsersync`
+Just to show how to configure it browsersynce. Also that auto opening browser thing kind of bugs me a bit. If you're happy with the defaults (or you're usgin livereload), no need to put anything in here.
 
 <h3>Adding a Post</h3>
 
-Adding a post is pretty much a case of adding a supported file under the src/render/posts directory. Right away there are two types of file you can use. There are the coffee script template files that end with .eco, so if you have a post called My First Post, you might call the file my-first-post.html.md.eco. You also have plain markdown files so you might call the file my-first-post.html.md. When you run docpad and it does its magic, the outputted file will be called my-first-post.html in both cases.
+Adding a post is pretty much a case of adding a supported file under the src/render/posts directory. Right away there are two types of file you can use. There are the coffee script template files that end with .eco, so if you have a post called My First Post, you might call the file my-first-post.html.md.eco. You also have plain markdown files so you might call the file my-first-post.html.md. When you run docpad and it does its thing, the outputted file will be called my-first-post.html in both cases.
 
 Whether you use .eco or markdown, you must begin the file with some [YAML](http://www.yaml.org/start.html) that describes the post. This is parsed by docpad when building the posts collection.
 
@@ -374,7 +389,7 @@ Some more content
 <% end %>
 ```
 
-So the post is all defined on one page but when rendered, is paged. Running locally, if you try it out, you'll see the page number in the URL. When you navigate tot he first page it's a normal URL:
+So the post is all defined on one file but when rendered, is paged. Running locally, if you try it out, you'll see the page number in the URL. When you navigate to the first page it's a normal URL:
 http://localhost:9778/posts/looking-glass-house but once you click on a link to the next page you get a number in the URL: http://localhost:9778/posts/looking-glass-house/2
 
 Besides CoffeeScript templates, you can use Markdown. You can also just stick html tags in your post it seems but markdown is a nice way to create content. If you're not used to markdown you could try this site out http://markdowntutorial.com/. There's more on markdown [here](https://daringfireball.net/projects/markdown/).
@@ -441,7 +456,7 @@ function howDoILook() {
 }
 ```
 
-There's a lot of styles to pick from and you are bound to find one you like. Syntax highlighting is important for the aesthetics of your blog. Maybe some hardcore developers who code review using email might be happy enough to read a blog post without it but most people these days wont even look at a page that doesn't style code a bit as they just take that little bit of extra effort to read.
+There's a lot of styles to pick from and you are bound to find one you like. Syntax highlighting is important for the aesthetics of your blog. Maybe some hardcore developers who code review using email might be happy enough to read a blog post without it but most people these days won't even look at a page that doesn't style code a bit as they just take that little bit of extra effort to read.
 
 <h3>Publishing the Blog</h3>
 
@@ -455,9 +470,9 @@ Install the plugin:
 docpad install ghpages
 ```
 
-Create a repository for your blog on Github. I called mine [ruairitobrien-blog](https://github.com/ruairitobrien/ruairitobrien-blog). Then you need to create a Github repository that follows a particular naming convention to automatically become your Github Pages site i.e. Guthub will automatically serve up what's in that repository at http://www.{your-github-username}.github.io. If you want your own URL for that you can but I'm not covering that here. The repository just has to use the naming convention {your-github-username}.github.io. Mine is here: https://github.com/ruairitobrien/ruairitobrien.github.io
+Create a repository for your blog on Github. I called mine [ruairitobrien-blog](https://github.com/ruairitobrien/ruairitobrien-blog). Then you need to create a Github repository that follows a particular naming convention to automatically become your Github Pages site i.e. Github will automatically serve up what's in that repository at http://www.{your-github-username}.github.io. If you want your own URL for that you can but I'm not covering that here. The repository just has to use the naming convention {your-github-username}.github.io. Mine is here: https://github.com/ruairitobrien/ruairitobrien.github.io
 
-Why do you need two repositories? Well, you don't really but you would need docpad to output all the generated static site stuff to the root of your project and that would be a but messy. Better to continue letting docpad put everything in the 'out' directory.
+Why do you need two repositories? Well, you don't really but you would need docpad to output all the generated static site stuff to the root of your project and that would be a bit messy. Better to continue letting docpad put everything in the 'out' directory.
 
 To use the plugin, create a remote called target and set it to your Guthub user name as mentioned here in the docs:
 
@@ -496,3 +511,5 @@ You might like to set up some kind of continuous deployment with a CI tool (my f
 I hope you are convinced of the amazing simplicity and value of using a static site generator like docpad. The amount of time it saves and the sheer flexibility and freedom it offers makes it a great choice to get started and hopefully you've found this useful. Thank you for reading!
 
 Please feel free to drop a comment below if you run in to any issues or have any feedback.
+
+Also, the entire code for my blog is here: https://github.com/ruairitobrien/ruairitobrien-blog

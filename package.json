@@ -4,6 +4,7 @@
   "description": "Static site generation of my blog using Docpad",
   "dependencies": {
     "docpad": "~6.78.1",
+    "docpad-plugin-browsersync": "~2.0.7",
     "docpad-plugin-cleanurls": "~2.8.1",
     "docpad-plugin-dateurls": "~2.4.0",
     "docpad-plugin-eco": "~2.1.0",
@@ -21,5 +22,6 @@
   "scripts": {
     "start": "node_modules/.bin/docpad-server",
     "deploy": "node_modules/.bin/docpad deploy-ghpages --silent --env static"
-  }
+  },
+  "devDependencies": {}
 }

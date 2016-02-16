@@ -28,7 +28,7 @@ docpadConfig = {
             img: '/img/rob.jpg',
             url: '',
             location: 'Cork, IRL',
-            bio: 'I do stuff and things'
+            bio: 'Who doesn\'t love a bit of coding?'
         },
         getPreparedTitle: function () {
             if (this.document.title) {
