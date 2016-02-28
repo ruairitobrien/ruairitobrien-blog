@@ -17,7 +17,7 @@ Before I go any further, all the source for this post is here https://github.com
 
 The down side to going full on ES2015 is the fact that not all browsers support it fully yet and some never will. Check out the [ES6 compatibility table](https://kangax.github.io/compat-table/es6/). It's hard to write an app that's supported absolutely everywhere and there's a lot to be said for keeping it simple, like [this site](http://motherfuckingwebsite.com/) but if you want to write any reasonably complex app in JavaScript today, ES2015 [transpiling](https://www.stevefenton.co.uk/2012/11/compiling-vs-transpiling/) to ES5 is probably the nicest way to go about it.
 
-So one good option for trasnpiling your ES2015 code to ES5 code is to use [Babel](https://babeljs.io). Not only does it have a cool name, Babel does a good job at keeping the converted code pretty neat and understandable. Another nice thing is that if you want to use React and JSX, Babel supports that too.
+So one good option for transpiling your ES2015 code to ES5 code is to use [Babel](https://babeljs.io). Not only does it have a cool name, Babel does a good job at keeping the converted code pretty neat and understandable. Another nice thing is that if you want to use React and JSX, Babel supports that too.
 
 This post is purely about allowing you to write ES6 code. I won't go in to the various other things you might want to do like minification.
 
@@ -86,7 +86,7 @@ gulp.task('default', function () {
 });
 ```
 
-The [glob](https://en.wikipedia.org/wiki/Glob_(programming)) pattern I'm using here `client/js/**/*.js` just says to process any files under client/js with a .js extension. It will also work on subdirectories there.
+The <a href="https://en.wikipedia.org/wiki/Glob_(programming)" target="_blank">glob</a> pattern I'm using here `client/js/**/*.js` just says to process any files under client/js with a .js extension. It will also work on subdirectories there.
 
 Now we'll put together some ES2015 code. I'm very new to ES2015 still so nothing too fancy. I'll just throw in some bits of the new language for demo purposes.
 
@@ -421,7 +421,9 @@ gulp.task('default', ['serve-watch']);
 
 The gulpfile has gotten a little more complicated but hopefully it all makes sense to you.
 
-The build function is the main thing there. It uses bebelify & browserify to bundle the ES2015 code in to a single ES5 script file. It pipes that through the sourcemap builder and then outputs everything to the public/js directory.
+The build function is the main thing there. It uses babelify & browserify to bundle the ES2015 code in to a single ES5 script file. It resolves what files need to be bundled by processing the import statements in your code. Any file that isn't referenced will not end up in the output. It pipes the outputs through the sourcemap builder and then writes everything to the public/js directory. 'Everything' being a single main.js file and a corresponding main.js.map file that your browser can use to make debugging easier when developing. The sourcemaps processor we're using takes care of the map referencing by adding this comment to the end of the main.js: `//# sourceMappingURL=main.js.map`.
+
+More on sourcemaps [here](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) and [here](https://github.com/ryanseddon/source-map/wiki/Source-maps%3A-languages,-tools-and-other-info).
 
 The `gulp serve` task will build and serve everything and then exit the gulp process.
 

@@ -1,6 +1,6 @@
 ---
 title: "To Make a Blog"
-cover: '/img/hello-masthead.jpg'
+cover: '/img/to-make-a-blog.jpg'
 isPost: true
 active: true
 excerptOther: 'In the beginning.'
