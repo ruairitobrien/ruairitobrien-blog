@@ -172,7 +172,7 @@ docpad install eco marked paged partials rss tags
 A quick note on `docpad install`.
 It's a handy way to install plugins but you can do so without it by simply using npm install for the plugin and updating the docpad config (more on the docpad config later).
 
-If you need to remove a plugin you use `docpad uninstall the-plugin-name` so if you wanted to unistall thr rss plugin for example it's:
+If you need to remove a plugin you use `docpad uninstall the-plugin-name` so if you wanted to uninstall the rss plugin for example it's:
 
 ```bash
 docpad uninstall rss
@@ -363,7 +363,7 @@ If you blog every day you might like a format such as '/YYYY/MM/DD'.
 Date URLS are only used for the specified collection, posts in this case.
 
 `plugins.browsersync`
-Just to show how to configure it browsersynce. Also that auto opening browser thing kind of bugs me a bit. If you're happy with the defaults (or you're usgin livereload), no need to put anything in here.
+Just to show how to configure it browsersync. Also that auto opening browser thing kind of bugs me a bit. If you're happy with the defaults (or you're using livereload), no need to put anything in here.
 
 <h3>Adding a Post</h3>
 
@@ -398,7 +398,7 @@ When you run docpad it will convert your markdown to HTML.
 
 So let's have a look at a kind of Hello World post that I'll call hello-world.html.md
 
-```
+```markdown
 ---
 title: "Hello World"
 cover: '/img/hello-masthead.jpg'
@@ -497,7 +497,7 @@ ghpages: {
 
 So we are telling the plugin to deploy the master branch to the remote repository that was set to target. This doesn't mean that you are deploying your actual code from your master branch to your Github Pages repository. The plugin initializes a git repository in your 'out' directory, commits everything in the out directory and synchronizes that to your Github Pages repository.
 
-TO deploy the app use this command:
+To deploy the app use this command:
 
 ```bash
 docpad deploy-ghpages --env static
