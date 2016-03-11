@@ -113,9 +113,10 @@ class ForWantOfANail {
     }
 
     toHtmlString() {
+        var lineBreak = '<br>';
         var htmlString = '';
         for (var [key, value] of this.wants) {
-            htmlString += `For want of a ${key} the ${value} was lost,<br>`;            
+            htmlString += `For want of a ${key} the ${value} was lost,${lineBreak}`;            
         }
         return htmlString += 'So a kingdom was lost, all for want of a nail.';
     }
@@ -279,9 +280,10 @@ export class ForWantOfANail {
     }
 
     toHtmlString() {
+        var lineBreak = '<br>';
         var htmlString = '';
         for (var [key, value] of this.wants) {
-            htmlString += `For want of a ${key} the ${value} was lost,<br>`;            
+            htmlString += `For want of a ${key} the ${value} was lost,${lineBreak}`;            
         }
         return htmlString += 'So a kingdom was lost, all for want of a nail.';
     }
