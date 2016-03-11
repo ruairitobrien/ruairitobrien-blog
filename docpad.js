@@ -6,11 +6,11 @@ docpadConfig = {
     templateData: {
         site: {
             title: 'Realgorithm',
-            tagline: 'What\'s a computer?',
-            description: 'I possibly might say something useful every once and awhile.',
+            tagline: 'How to Win Programs and Influence Code',
+            description: 'How to Win Programs and Influence Code.',
             logo: '/img/logo.png',
             url: 'http://ruairitobrien.github.io/',
-            cover: '/img/cover.jpg',
+            cover: '/img/fire.jpg',
             navigation: [
                 {
                     name: 'Home',
@@ -28,7 +28,7 @@ docpadConfig = {
             img: '/img/rob.jpg',
             url: '',
             location: 'Cork, IRL',
-            bio: 'Who doesn\'t love a bit of coding?'
+            bio: 'Code. Code. Code. Family stuff. Play video games. Code.'
         },
         getPreparedTitle: function () {
             if (this.document.title) {
