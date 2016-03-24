@@ -10,7 +10,7 @@ docpadConfig = {
             description: 'How to Win Programs and Influence Code.',
             logo: '/img/logo.png',
             url: 'http://ruairitobrien.github.io/',
-            cover: '/img/fire.jpg',
+            cover: '/img/raven.jpg',
             navigation: [
                 {
                     name: 'Home',
