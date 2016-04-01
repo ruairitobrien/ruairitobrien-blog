@@ -21,7 +21,7 @@ I am going to add the ability for visitors to my blog to sign up to my yet to be
 
 For this I used [MailChimp](http://mailchimp.com/). I created an account with them and then blundered my way through creating a mailing list. There are many other options besides MailChimp out there so use whatever one you prefer. The instructions aren't likely to change too much. MailChimp just happens to have an easy setup and a free plan so that's why I went with them. Important to note that when you are creating an account with MailChimp and I presume any other mail service, you will be asked to provide a real physical address. This is a legal requirement and will be available to anybody you email using that service. Just something to be aware of.
 
-Once your account is set up the option to create a mailing list will be shown to you. You'll be asked for some basic details. To give you an idea of what, I've put a picture of the from below.
+Once your account is set up the option to create a mailing list will be shown to you. You'll be asked for some basic details. To give you an idea of what, I've put a picture of the form below.
 
 ![alt text](/img/adding-more-stuff-to-your-blog/create-list.png "Create List")
 
@@ -33,7 +33,7 @@ Next step is to create a form.
 
 You will probably want to use either the Embedded forms or the Subscriber popup option. When you select one of those options you will be able to customize things a little and then you will be given some code that you can paste in to your blog.
 
-I chose to put my form in the right navigation menu so I pasted an embedded form in to src/partials/navigation.html.eco just after the site navigation 'ul' element. You can see the result by clicking the menu button at the top of this page.
+I chose to put my form in the right navigation menu so I pasted an embedded form in to `src/partials/navigation.html.eco` just after the site navigation 'ul' element. You can see the result by clicking the menu button at the top of this page.
 
 Now that you have a form on your site, hopefully somebody might subscribe and you can email them. In MailChimp you can set up a campaign to do this. You can use some email template there and send it to everyone on the list either manually or at regular intervals. There's a lot of options there. If you want to fully automate the sending of emails, there does appear to be a way to send content from an RSS feed so if you have RSS setup for you blog (went through that in the first blog post), you may be able to use that.
 
@@ -49,7 +49,7 @@ Fill out the fields with your site name and URL and click the **Get Tracking ID*
 
 ![alt text](/img/adding-more-stuff-to-your-blog/tracking-id.png "Tracking ID")
 
-You'll probably want to put this code at the bottom of src/layouts/default.html.eco or whatever your default layout file is if it is different. This will ensure all visits to your blog get tracked.
+You'll probably want to put this code at the bottom of `src/layouts/default.html.eco` or whatever your default layout file is if it is different. This will ensure all visits to your blog get tracked.
 
 
 That's it. Very little to it and very straight forward.
