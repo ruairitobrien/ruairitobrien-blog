@@ -1,6 +1,6 @@
 ---
 title: "Babel Workflow"
-cover: '/img/small-fresh.jpg'
+cover: '/img/heads/small-fresh.jpg'
 isPost: true
 active: true
 excerptOther: 'Babel Workflow for ECMAScript 2015.'

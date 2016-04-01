@@ -20,6 +20,11 @@
             $("body").toggleClass("nav-opened nav-closed");
         });
 
+        // Have all links open with target blank i.e. in a new tab
+        $(document.links).filter(function() {
+          return this.hostname != window.location.hostname;
+        }).attr('target', '_blank');
+
     });
 
     // Arctic Scroll by Paul Adam Davis
