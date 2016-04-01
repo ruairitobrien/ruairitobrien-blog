@@ -4,7 +4,7 @@ cover: '/img/heads/small-fresh.jpg'
 isPost: true
 active: true
 excerptOther: 'Babel Workflow for ECMAScript 2015.'
-postDate: 'Sun Feb 28 2016 GMT'
+postDate: '2016-02-28'
 tags:
  - es6
  - ECMAScript 2015

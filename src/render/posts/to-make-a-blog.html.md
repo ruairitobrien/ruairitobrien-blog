@@ -4,7 +4,7 @@ cover: '/img/heads/to-make-a-blog.jpg'
 isPost: true
 active: true
 excerptOther: 'In the beginning.'
-postDate: 'Sun Feb 02 2016 GMT'
+postDate: '2016-02-02'
 tags:
  - first post
  - blog

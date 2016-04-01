@@ -4,7 +4,7 @@ cover: '/img/heads/fire.jpg'
 isPost: true
 active: true
 excerptOther: 'How to put some extra functionality in to your statically generated docpad blog.'
-postDate: 'Sat Apr 02 2016 GMT'
+postDate: '2016-04-02'
 tags:
 - blog
 - docpad

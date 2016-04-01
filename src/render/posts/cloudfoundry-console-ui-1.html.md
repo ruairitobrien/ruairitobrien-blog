@@ -4,7 +4,7 @@ cover: '/img/small-fresh.jpg'
 isPost: true
 active: false
 excerptOther: 'Building a Cloudfoundry Console UI with React and Node.'
-postDate: 'Fri Mar 11 2016 GMT'
+postDate: '2016-03-11'
 tags:
  - React
  - Cloudfoundry

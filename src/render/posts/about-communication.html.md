@@ -4,7 +4,7 @@ cover: '/img/heads/meeting.jpg'
 isPost: true
 active: true
 excerptOther: 'Is Code Communication?'
-postDate: 'Wed Mar 23 2016 GMT'
+postDate: '2016-03-23'
 tags:
  - code
  - software
