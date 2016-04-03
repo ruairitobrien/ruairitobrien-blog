@@ -5,6 +5,7 @@ isPost: true
 active: true
 excerptOther: 'Babel Workflow for ECMAScript 2015.'
 postDate: '2016-02-28'
+date: '2016-02-28'
 tags:
  - es6
  - ECMAScript 2015

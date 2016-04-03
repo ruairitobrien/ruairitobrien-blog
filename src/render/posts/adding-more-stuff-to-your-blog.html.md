@@ -5,6 +5,7 @@ isPost: true
 active: true
 excerptOther: 'How to put some extra functionality in to your statically generated docpad blog.'
 postDate: '2016-04-02'
+date: '2016-04-02'
 tags:
 - blog
 - docpad

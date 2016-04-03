@@ -132,7 +132,7 @@ docpadConfig = {
         },
         dateurls: {
             cleanurl: true,
-            trailingSlashes: true,
+            trailingSlashes: false,
             collectionName: 'posts',
             dateFormat: '/YYYY/MM'
         }
