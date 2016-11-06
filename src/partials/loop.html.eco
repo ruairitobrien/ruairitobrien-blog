@@ -23,7 +23,7 @@
       <% end %>
         </span>
       <time class="post-date" datetime="<%= @time(page.postDate, 'YYYY-MMMM-DD') %>"><%= @time(page.postDate, 'DD MMMM YYYY') %></time>
-        <a  class="post-date" href="http://example.com/bar.html#disqus_thread">0 Comments</a>
+      <a  class="post-date" href="<%= page.url %>#disqus_thread">0 Comments</a>
     </footer>
 </article>
 <% end %>
