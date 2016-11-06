@@ -124,7 +124,7 @@ docpadConfig = {
             }
         },
         ghpages: {
-            deployRemote: 'target',
+            deployRemote: 'pages',
             deployBranch: 'master'
         },
         cleanurls: {

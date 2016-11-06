@@ -4,13 +4,13 @@
 
 <% end %>
 
-<% for page in @getPageCollection("posts").toJSON(): %>
+<% for post in @getPageCollection("posts").toJSON(): %>
 <article class="post">
     <header class="post-header">
-        <h2 class="post-title"><a href="<%= page.url %>"><%= page.title %></a></h2>
+        <h2 class="post-title"><a href="<%= post.url %>"><%= post.title %></a></h2>
     </header>
     <section class="post-excerpt">
-      <p><%- @excerpt(page) %> <a class="read-more" href="<%= page.url %>">&raquo;</a></p>
+      <p><%- @excerpt(post) %> <a class="read-more" href="<%= post.url %>">&raquo;</a></p>
     </section>
     <footer class="post-meta">
       <% if @author.img: %>
@@ -18,12 +18,12 @@
       <% end %>
       <%- @partial('author') %>
         <span class="post-date">
-      <% if page.tags: %>
-        <%- @partial('tags', {tags: page.tags}) %>
+      <% if post.tags: %>
+        <%- @partial('tags', {tags: post.tags}) %>
       <% end %>
         </span>
-      <time class="post-date" datetime="<%= @time(page.postDate, 'YYYY-MMMM-DD') %>"><%= @time(page.postDate, 'DD MMMM YYYY') %></time>
-      <a  class="post-date" href="<%= page.url %>#disqus_thread">0 Comments</a>
+      <time class="post-date" datetime="<%= @time(post.postDate, 'YYYY-MMMM-DD') %>"><%= @time(post.postDate, 'DD MMMM YYYY') %></time>
+      <a class="post-date" href="<%= post.url %>#disqus_thread" data-disqus-identifier="<%= post.url %>">0 Comments</a>      
     </footer>
 </article>
 <% end %>

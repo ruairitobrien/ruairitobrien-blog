@@ -10,7 +10,7 @@ layout: 'default'
       <h1 class="post-title"><%= @document.title %></h1>
       <section class="post-meta">
         <% if @document.isPaged: %>
-          <b>Page <%= @document.page.number + 1 %></b> 
+          <b>Page <%= @document.page.number + 1 %></b>
         <% end %>
         <time class="post-date" datetime="<%= @time(@document.postDate, 'YYYY-MMMM-DD') %>"><%= @time(@document.postDate, 'DD MMMM YYYY') %></time> <% if @document.tags: %><%- @partial('tags', {tags: @document.tags}) %><% end %>
       </section>
