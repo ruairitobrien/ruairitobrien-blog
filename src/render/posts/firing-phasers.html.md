@@ -12,10 +12,7 @@ tags:
  - JavaScript
 ---
 
->It was octarine, the colour of magic. It was alive and glowing and vibrant and it was the undisputed pigment of the imagination, because wherever it appeared it was a sign that mere matter was a servant of the powers of the magical mind. It was enchantment itself.
-But Rincewind always thought it looked a sort of greenish-purple.
-
-__TL;DR__ If you want to try my solution to developing with phaser 2 and es6, try this yeoman generator [here](https://www.npmjs.com/package/generator-fire-phaser).
+__TL;DR__ If you want to try my solution to developing with [phaser 2](http://phaser.io/) and es6, try this yeoman generator [here](https://www.npmjs.com/package/generator-fire-phaser).
 
 ### What?
 
