@@ -39,7 +39,7 @@ In my personal experience however, TDD is not generally accepted as a necessary 
 
 A reference within the original 'TDD is dead' post is the article [Why Most Unit Testing is Waste](http://rbcs-us.com/documents/Why-Most-Unit-Testing-is-Waste.pdf) by [Jim Coplien ](https://en.wikipedia.org/wiki/Jim_Coplien) which is discussed in the video where [Jim Coplien and Bob Martin Debate TDD](https://www.youtube.com/watch?v=KtHQGs3zFAM).
 
-The TDD is dead subject also lead to a long discussion between [Kent Beck](https://www.facebook.com/kentlbeck), [Martin Fowler](http://www.martinfowler.com/) and [David Heinemeier Hansson](http://david.heinemeierhansson.com/) which you can watch here if you are interested: 
+The TDD is dead subject also led to a long discussion between [Kent Beck](https://www.facebook.com/kentlbeck), [Martin Fowler](http://www.martinfowler.com/) and [David Heinemeier Hansson](http://david.heinemeierhansson.com/) which you can watch here if you are interested: 
 
 * [TW Hangouts   |   Is TDD dead? - YouTube](https://www.youtube.com/watch?v=z9quxZsLcfo)
 * [TW Hangouts   |   Is TDD dead? Part II - YouTube](https://www.youtube.com/watch?v=JoTB2mcjU7w)
@@ -52,7 +52,7 @@ All this covers the input of only a few people in the industry and there are man
 
 In nearly all the discussions there was a consensus that automated testing is important. Most disagreements seemed to be around the perception of TDD as a process and perhaps the granularity of automated tests too. 
 
-As with so many subjects in software development, a lot of the information we have available is based on opinions and anecdotes.  We hear about many stories from the perspective of the story teller and we try to build up a picture of what is right so we can try to apply that to our own situations. We generally just try things to see if they work. Some data would be useful. Is it just that software development is very difficult to measured in this way? When it comes to TDD at least some efforts have been made to gather data. 
+As with so many subjects in software development, a lot of the information we have available is based on opinions and anecdotes. We hear about many stories from the perspective of the story teller and we try to build up a picture of what is right so we can try to apply that to our own situations. We generally just try things to see if they work. Some data would be useful. Is it just that software development is very difficult to measure in this way? When it comes to TDD at least some efforts have been made to gather data. 
 
 ## Studies on TDD
 In 2003 a study called [An Initial Investigation of Test Driven Development in
@@ -65,24 +65,18 @@ interfaces.
 
 There were a lot of limitations to that study which the 2003 study were trying to address. 
 
-According to the Georg and Williams paper, the TDD group produced code that passed 18% more functional black box test cases but took 16% more time for development.
+According to the George and Williams paper, the TDD group produced code that passed 18% more functional black box test cases but took 16% more time for development.
 
-> A hypothesis of this research was that the TDD approach  
-would yield code with superior external code quality. Based on
-the data analysis conducted, the experimental findings are
-supportive that the TDD approach yields code with superior
-external code quality. However, the validity of the results must be
-considered within the context of the limitations discussed in external
-validity section.
+> A hypothesis of this research was that the TDD approach would yield code with superior external code quality. Based on the data analysis conducted, the experimental findings are supportive that the TDD approach yields code with superior external code quality. However, the validity of the results must be considered within the context of the limitations discussed in external validity section.
 
-There were also some interesting findings around the lack of testing done by the control group. Not practicing TDD appeared to cause a leaning towards a lack of testing in general. 
+There were also some interesting findings around the lack of testing done by the control group. Not practising TDD appeared to cause a leaning towards a lack of testing in general. 
 
 This study had many limitations but it was still a good effort to gather some real data on how TDD might work in industry. In terms of proof that TDD works or not, this study is far from that. 
 
 An interesting paper to look at is [Janzen, D. S., (2006). An Empirical Evaluation of the Impact of
-Test-Driven Development on Software Quality](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.9412&rep=rep1&type=pdf) which looks at other studies and does analysis on data gathered by them. This is a long paper and I wont repeat much of it here but I will highlight some interesting data and points from it. The data is interesting but it is worth keeping in mind the data is from the early 2000's with relatively small sample sizes. 
+Test-Driven Development on Software Quality](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.9412&rep=rep1&type=pdf) which looks at other studies and does analysis on data gathered by them. This is a long paper and I won't repeat much of it here but I will highlight some interesting data and points from it. The data is interesting but it is worth keeping in mind the data is from the early 2000's with relatively small sample sizes. 
 
-Below are tables with a summaries of findings from various papers referenced in [Janzen, D. S., (2006)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.9412&rep=rep1&type=pdf)
+Below are tables with summaries of findings from various papers referenced in [Janzen, D. S., (2006)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.9412&rep=rep1&type=pdf)
 
 Type (CE) is a controlled experiment and (CS) is a case study.
 
@@ -102,7 +96,7 @@ Type (CE) is a controlled experiment and (CS) is a case study.
 |[Pancur](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1248175)|CE|38|no change|no change|
 |[Erdogmus](http://ieeexplore.ieee.org/document/1423994/)|CE|35|no change|improved productivity|
 
-The data here suggest mostly positive or neutral results from TDD. There is one exception (the previously mentioned George paper) where TDD took 16% longer than the control group but it is noted the control group wrote lest tests in that study.
+The data here suggest mostly positive or neutral results from TDD. There is one exception (the previously mentioned George paper) where TDD took 16% longer than the control group but it is noted the control group wrote fewer tests in that study.
 
 > The essence of TDD as a design methodology is virtually unstudied, yet scattered early adoption has proceeded based solely on anecdotal evidence.   
 
@@ -114,19 +108,19 @@ This to me is a great point. Measurement is difficult and getting fully conclusi
 
 Much of the data in that paper relies on surveys. These surveys indicated that the more knowledge and experience a developer had with testing and software development in general, the more likely the developer would be of having a better experience with TDD as a process. Interesting but not a major revelation of course. 
 
-Some conclusion the paper arrived at:
+A conclusion the paper arrived at:
 
 >This research has demonstrated that TDD can and is likely to improve some software
 quality aspects at minimal cost over a comparable test-last approach. In particular
 it has shown statistically significant differences in the areas of code complexity,
 size, and testing.
 
-This did appear to be the conclusion based on the data but this is a while back now so it's difficult to say if this is as true today. Also the experiments were on such small groups that it's hard to take this as a fact. To say the results are statistically significant could be a bit of a stretch but it's certainly better than no data.
+This conclusion seems very positive in favour of TDD. A notable issue with these studies is that the sample size is quite small, putting some doubt on the statistical significance of the results. That said, I would argue this work is better than nothing and gives us something to go on at least.  
 
 >This research revealed a number of differences between TDD acceptance and
 efficacy in beginning and mature developers. 
 
-This is just an interesting observation to me. Why do more experienced developers prefer TDD to newer developers? 
+This is just an interesting observation to me. Why do more experienced developers prefer TDD to less experienced developers? 
 
 A similar work: [Overview of the Test Driven Development
 Research Projects and Experiments ](http://proceedings.informingscience.org/InSITE2012/InSITE12p165-187Bulajic0052.pdf) also looks at varied research papers. This one is slightly newer (2012) and included some more recent research. A significant addition is a study with IBM and Microsoft development teams.
@@ -139,7 +133,7 @@ Threats to validity of the study were identified as (Nagappan et al., 2008):
 * Higher motivation of developers that were using TDD methodology.
 * The project developed by using TDD might be easier. 
 
-The conclusion of that paper were less positive than Janzen's as they rightly concluded the results were too varied and sample sizes too small to draw any positive conclusions.
+The findings of that paper were less positive than Janzen's as they rightly noted the results were too varied and the sample sizes too small to draw any positive conclusions.
 
 Another [controlled experiment conducted in 2012](http://www.ipr.mdh.se/pdf_publications/2345.pdf) once again concluded that TDD is probably a good thing but that more evidence is needed.
 
@@ -157,7 +151,7 @@ in which unit tests are written after production code
  
 If you look at how the tests were conducted though you can see an interesting aspect of it is how programmers were to use iterative development. There was a fairly tight loop between test and production code for both TDD and TLD. Perhaps a tight iterative loop is more important than the order of test code?
 
-In my opinion this paper didn't provide enough data to give a conclusion one way or the other. It certainly didn't prove TDD was better or worse than writing all your tests after writing all your production code for a decent sized project. Also this study was focused in academia which can make it harder to relate to industry. 
+In my opinion this paper didn't provide enough data to give a conclusion one way or the other. It certainly didn't prove TDD was better or worse than writing all your tests after writing all your production code for a decent sized project.
  
 The final study we will glance at is one I just recently came across called [A dissection of the test-driven development process: does it really matter to test-first or to test-last?](https://arxiv.org/pdf/1611.05994.pdf) which is also by Fucci et al. This study actually appears to reach a similar conclusion to the previous study except that in this case the programmers involved work in industry. Also the comparisons were with iterative test last (ITL) development (which I think is a better term than TLD for this) and TDD.
 
@@ -167,13 +161,13 @@ Another interesting conclusion in that study is that shorter cycle times (time b
 
 Looking at all the data it is fairly easy to say the answer to the questions 'Does TDD Work?' is inconclusive. 
 
-If the question become more specific at least there are some answers. TDD as a process is definitely better than some alternatives, such as no test process.
+If the question becomes more specific at least there are some answers.
 
-The evidence appears to be heavily stacked in favour of short iterative test cycles, very similar to that prescribed in TDD literature, being significantly better for code quality with minimal impact on productivity. Small iterations with small testable blocks of code does appear to lead to more maintainable code. 
+The evidence appears to be heavily stacked in favour of short iterative test cycles, very similar to that prescribed in TDD literature, being significantly better for code quality with minimal impact on productivity. A process of small iterations with small testable blocks of code does appear to lead to more maintainable code. 
 
 Current evidence suggests that unit testing beats integration and higher level testing. 
 
-There is currently very little evidence that practicing TDD is bad.
+There is currently very little evidence that practising TDD is bad.
 
 Whether writing a test first or last is better within a tight iterative cycle is inconclusive.
 
@@ -192,7 +186,7 @@ I personally do think varied approaches to TDD are OK. The definition of TDD sho
 
 It does sometimes feel like TDD is just a little too hard though. It reminds me of trying to do functional programming in Java. If everything is designed from the beginning to facilitate TDD, it's fairly easy. That is so rare still though and trying to do TDD all the time is really difficult in the systems we have to work with.
 
-I would love to see something like a test only approach. Perhaps a language where you only write tests and configurations and somehow end up with really efficient production code that you don't have to read. Maybe an interesting side project I might work on one day.
+I would love to see something like a test-only approach. Perhaps a language where you only write tests and configurations and somehow end up with really efficient production code that you don't have to read. Maybe an interesting side project I might work on one day.
 
 ## References
 
