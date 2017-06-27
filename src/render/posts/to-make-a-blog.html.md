@@ -21,6 +21,9 @@ Should I sign up to a service like [Wordpress](https://wordpress.com/), [Blogger
 
 If the existing services aren't the right option, what are the alternatives?
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&gt; i should write a blog post<br>&gt; don’t like my current blogging engine<br>&gt; could build one<br>*builds blogging engine*<br>&gt; could blog about that</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/743799765566054410">June 17, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 Build your own site of course! One problem there is, that's a lot of work. Sure you could throw something together fairly quickly but watch the hours slip away as you try to add some of the common features on any blog site. We (developers) all know we **can** build a blog site from scratch. In the majority of cases, we really shouldn't.
 
 One option. Set up a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) server, install Wordpress... I really don't want to launch in to a long spiel about why I don't like this option but, well, I don't. I don't like managing a database if I don't have to. I like things to be fast and scalable and I don't like dealing with security issues if I don't have to. If you have coding skills, take advantage of them and avoid Wordpress. That is just my opinion though. A lot of people wouldn't agree with me on that I know.
