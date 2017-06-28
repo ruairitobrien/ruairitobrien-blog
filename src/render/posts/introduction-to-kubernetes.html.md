@@ -10,7 +10,9 @@ tags:
  - kubernetes
 ---
 
-This post is a relatively short introduction to kubernetes. I wont actually be explaining what kubernetes. That content is all available on [the kubernetes website](https://kubernetes.io/). This post is about using kubernetes for the first time and playing around with some of the basic features.
+(This is currently a work in progress)
+
+This post is a relatively short introduction to kubernetes. I wont actually be explaining what kubernetes is. That content is all available on [the kubernetes website](https://kubernetes.io/). This post is about using kubernetes for the first time and playing around with some of the basic features.
 
 We will look at using kubernetes in two ways. With the Google Cloud Platform (GCP) and with minikube. 
 
@@ -102,7 +104,7 @@ project = kubernetes-practice-ruairi
 Your active configuration is: [default]
 ```
 
-Now create a clister.
+Now create a cluster.
 
 ```
 gcloud container clusters create my-cool-cluster
@@ -308,7 +310,7 @@ Now we have attached an autoscaler.
 
 The autoscaler will scale up when cpu is above 10% on average. It will also scale down to the minimum when cpu utilisation is below average.
 
-Try runnng this.
+Try running this.
 
 ```
 kubectl describe svc hello-kubernetes
@@ -346,7 +348,7 @@ NAME               REFERENCE                     TARGETS   MINPODS   MAXPODS   R
 hello-kubernetes   Deployment/hello-kubernetes   0% / 1%   4         12        4          1m
 ```
 
-And just to confirsm the numebr of pods is 4.
+And just to confirm the number of pods is 4.
 
 ```
 kubectl get pods
@@ -359,15 +361,23 @@ hello-kubernetes-3390701390-w6kjg   1/1       Running   0          47m
 
 Now the fun part. Let's see autoscaling in action! 
 
-You probably have a better way of doing this (please comments with a suggestion@) but what I did here was just run this in a few console windows.
+You probably have a better way of doing this (please comment with a suggestion) but what I did here was just run this.
 
 ```
-while true; do curl $IP; done
+while true; do curl -XGET ${IP} & done
 
 # So for my cluster in the above examples that was
 
-while true; do curl 104.198.145.117; done
+while true; do curl -XGET 104.198.145.117 & done
 ```
+
+Or something a little safer perhaps.
+
+```
+for i in {1..1000}; do curl -XGET ${IP} & done
+```
+
+If you go down the safe route with a limited loop, the timing where you check the following things is important.
 
 After a while you should start to see autoscaling kicking in:
 
@@ -376,6 +386,8 @@ kubectl get hpa
 NAME               REFERENCE                     TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 hello-kubernetes   Deployment/hello-kubernetes   3% / 1%   4         12        8          4m
 ```
+
+You can see the 'TARGETS' ratio (that's the CPU utilisation) is grown above that which we specified. In my example it's 3% but the autoscaler wants it to be below 1% on average so it should start scaling up to bring that back in balance. 
 
 Check the new pods getting created.
 
@@ -392,7 +404,7 @@ hello-kubernetes-3390701390-txg9z   1/1       Running   0          4m
 hello-kubernetes-3390701390-w6kjg   1/1       Running   0          48m
 ```
 
-Then kill all the while loops!
+Don't forget to while loop! Unless you used the for loop of course.
 
 After a minute or 2 check again.
 
@@ -420,7 +432,6 @@ hello-kubernetes-3390701390-w6kjg   1/1       Running       0          53m
 They may already be gone depending how long you waited to check. 
 
 Maybe I am too easily impressed but I just think that is awesome!
-
 
 
 
