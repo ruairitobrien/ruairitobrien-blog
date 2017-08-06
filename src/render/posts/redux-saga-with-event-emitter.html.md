@@ -1,5 +1,6 @@
 ---
-title: "Redux Saga with an Event Emitter"
+author: 'ruairi'
+title: 'Redux Saga with an Event Emitter'
 cover: '/img/small-fresh.jpg'
 isPost: true
 active: false

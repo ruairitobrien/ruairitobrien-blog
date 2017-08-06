@@ -1,4 +1,5 @@
 ---
+author: 'ruairi'
 title: "Custom Cloudfoundry Console UI - 1"
 cover: '/img/small-fresh.jpg'
 isPost: true

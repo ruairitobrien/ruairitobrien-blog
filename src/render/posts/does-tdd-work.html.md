@@ -1,5 +1,6 @@
 ---
-title: "Does Test Driven Development Work?"
+author: 'ruairi'
+title: 'Does Test Driven Development Work?'
 cover: '/img/heads/austin-neill-163306-min.jpg'
 isPost: true
 active: true

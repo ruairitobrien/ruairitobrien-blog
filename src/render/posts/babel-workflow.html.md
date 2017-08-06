@@ -1,5 +1,6 @@
 ---
-title: "Babel Workflow"
+author: 'ruairi'
+title: 'Babel Workflow'
 cover: '/img/heads/small-fresh.jpg'
 isPost: true
 active: true

@@ -1,5 +1,6 @@
 ---
-title: "Start Game Coding in ES6"
+author: 'ruairi'
+title: 'Start Game Coding in ES6'
 cover: '/img/pacman.png'
 isPost: true
 active: true

@@ -5,11 +5,11 @@ moment = require('moment');
 docpadConfig = {
     templateData: {
         site: {
-            title: 'Realgorithm',
+            title: 'Geeroar Industries',
             tagline: 'How to Win Programs and Influence Code',
             description: 'How to Win Programs and Influence Code.',
             logo: '/img/logo.png',
-            url: 'http://ruairitobrien.github.io/',
+            url: 'http://geeroar.com/',
             cover: '/img/kb.jpg',
             navigation: [
                 {
@@ -24,11 +24,20 @@ docpadConfig = {
             ]
         },
         author: {
-            name: 'Ruairi O\'Brien',
-            img: '/img/rob.jpg',
-            url: '',
-            location: 'Cork, IRL',
-            bio: 'Code. Code. Code. Family stuff. Play video games. Code.'
+            ruairi: {
+                name: 'Ruairi O\'Brien',
+                img: '/img/rob.jpg',
+                url: 'https://github.com/ruairitobrien',
+                location: 'Stockholm, SE',
+                bio: 'Code. Code. Code. Family stuff. Play video games. Code.'
+            },
+            george: {
+                name: 'George Boyle',
+                img: '/img/george.jpg',
+                url: 'https://github.com/Dockheas23',
+                location: 'Stockholm, SE',
+                bio: ''
+            }
         },
         getPreparedTitle: function () {
             if (this.document.title) {

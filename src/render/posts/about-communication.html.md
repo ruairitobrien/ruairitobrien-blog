@@ -1,5 +1,6 @@
 ---
-title: "About Communication"
+author: 'ruairi'
+title: 'About Communication'
 cover: '/img/heads/meeting.jpg'
 isPost: true
 active: true

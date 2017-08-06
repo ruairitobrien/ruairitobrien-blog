@@ -1,1 +1,1 @@
-<a href="<%= @author.href %>"><%= @author.name %></a>
+<a href="<%= @author[@authorId].href %>"><%= @author[@authorId].name %></a>

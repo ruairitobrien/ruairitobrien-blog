@@ -1,5 +1,6 @@
 ---
-title: "To Make a Blog"
+author: 'ruairi'
+title: 'To Make a Blog'
 cover: '/img/heads/to-make-a-blog.jpg'
 isPost: true
 active: true

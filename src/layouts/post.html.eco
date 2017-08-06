@@ -51,24 +51,24 @@ layout: 'default'
     <% end %>
     <footer class="post-footer">
 
-      <% if @author.img: %>
+      <% if @author[@document.author].img: %>
       <figure class="author-image">
-        <a class="img" href="<%= @author.href %>" style="background-image: url(<%= @author.img %>)"><span class="hidden"><%= @author.name %>'s Picture</span></a>
+        <a class="img" href="<%= @author[@document.author].href %>" style="background-image: url(<%= @author[@document.author].img %>)"><span class="hidden"><%= @author[@document.author].name %>'s Picture</span></a>
       </figure>
       <% end %>
 
       <section class="author">
-        <h4><a href="<%= @author.href %>"><%= @author.name %></a></h4>
+        <h4><a href="<%= @author[@document.author].href %>"><%= @author[@document.author].name %></a></h4>
 
-        <% if @author.bio: %>
-        <p><%- @author.bio %></p>
+        <% if @author[@document.author].bio: %>
+        <p><%- @author[@document.author].bio %></p>
         <% end %>
         <div class="author-meta">
-          <% if @author.location: %>
-          <span class="author-location icon-location"><%= @author.location %></span>
+          <% if @author[@document.author].location: %>
+          <span class="author-location icon-location"><%= @author[@document.author].location %></span>
           <% end %>
-          <% if @author.website: %>
-          <span class="author-link icon-link"><a href="<%= @author.website %>"><%= @author.website %></a></span>
+          <% if @author[@document.author].website: %>
+          <span class="author-link icon-link"><a href="<%= @author[@document.author].website %>"><%= @author[@document.author].website %></a></span>
           <% end %>
         </div>
       </section>

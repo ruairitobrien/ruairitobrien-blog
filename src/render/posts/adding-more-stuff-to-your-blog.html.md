@@ -1,5 +1,6 @@
 ---
-title: "Adding More Stuff to Your Blog"
+author: 'ruairi'
+title: 'Adding More Stuff to Your Blog'
 cover: '/img/heads/fire.jpg'
 isPost: true
 active: true

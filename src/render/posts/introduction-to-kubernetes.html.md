@@ -1,5 +1,6 @@
 ---
-title: "Introduction to Kubernetes"
+author: 'ruairi'
+title: 'Introduction to Kubernetes'
 cover: '/img/heads/steven-wei-124690.jpg'
 isPost: true
 active: true
@@ -28,8 +29,10 @@ You can also just use the cloud console in the GCP UI but I will use `gcloud` in
 
 Assumes you have followed the instructions above and installed `gcloud`.
 
-```
+``` bash
+
  gcloud components install kubectl
+
  ```
 
 ### Google Cloud Platform
@@ -75,54 +78,76 @@ You will be offered a free trial but you still have to enter a credit card to ge
 #### Create a cluster in GCP
 
 If you haven't authorized gcloud already, do so now like so:
-```
+
+``` bash
+
 gcloud auth login
+
 ```
+
 That should open a browser window where you can login to your google account. 
 
 Now configure the project you created (PROJECT_ID should be replaced with the ID of your project):
-```
+
+``` bash
+
 gcloud config set project PROJECT_ID
-```
-Configure your desired zone like this:
 
 ```
+
+Configure your desired zone like this:
+
+``` bash
+
 gcloud config set compute/zone europe-west1-d
+
 ```
 
 You can list the available zones with this command:
-```
+
+``` bash
+
 gcloud compute zones list
+
 ```
 
 Verify the configuration like this:
-```
+
+``` bash
+
 gcloud config list core/project
 [core]
 project = kubernetes-practice-ruairi
 
 Your active configuration is: [default]
+
 ```
 
 Now create a cluster.
 
-```
+``` bash
+
 gcloud container clusters create my-cool-cluster
+
 ```
 
 (probably pick a better cluster name)
 
 Verify it's there.
 
-```
+``` bash
+
 gcloud container clusters list
+
 ```
 
 You should see something like this.
 
-```
+``` bash
+
 NAME             ZONE           MASTER_VERSION  MASTER_IP       MACHINE_TYPE   NODE_VERSION  NUM_NODES  STATUS
 my-cool-cluster  europe-west1-d 1.6.4           130.211.181.72  n1-standard-1  1.6.4         1          RUNNING
+
 ```
 
 ### minikube
@@ -132,19 +157,23 @@ https://github.com/kubernetes/minikube
 
 With minkube creating a clust is a little easier:
 
-```
+``` bash
+
 minikube start
+
 ```
 
 You also have the added advantage of not needing to setup a GCP account and all that but it's only useful for developing stuff locally of course.
 
 To make sure kubectl is pointing at minikube try this:
 
-```
+``` bash
+
 kubectl cluster-info
 Kubernetes master is running at https://192.168.99.100:8443
 KubeDNS is running at https://192.168.99.100:8443/api/v1/proxy/namespaces/kube-system/services/kube-dns
 kubernetes-dashboard is running at https://192.168.99.100:8443/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
+
 ```
 
 ### Switching contexts in kubectl
@@ -153,18 +182,24 @@ If you end up using both GCP and mimikube, it's useful to easily switch contexts
 
 These commands help:
 
-```
+``` bash
+
 kubectl config get-contexts
-```
 
 ```
+
+``` bash
+
 kubectl config use-context ${context_name}
+
 ```
 
 You can also set the context in each call:
 
-```
+``` bash
+
 kubectl <some options here> --context=minikube
+
 ```
 
 ### Deploy something
@@ -175,8 +210,10 @@ Note, these instructions should work the same whether you are using GCP or minik
 
 Code for that app is here but nothing interesting there really https://github.com/ruairitobrien/hello-kubernetes-world
 
-```
+``` bash
+
 kubectl run hello-kubernetes --image ruairitobrien/hello-kubernetes-world:latest
+
 ```
 
 You should usually specify a version number so you have a history of deployed versions that you can switch to if needed but ':latest' will do for this tutorial. 
@@ -184,31 +221,38 @@ You should usually specify a version number so you have a history of deployed ve
 
 You should see
 
-```
+``` bash
+
 deployment "hello-kubernetes" created
+
 ```
 
 Verify it worked
 
-```
+``` bash
+
 $ kubectl get deployments
 NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 hello-kubernetes   1         1         1            1           1m
+
 ```
 
 You can also check the pod that was created:
 
-```
+``` bash
+
 $ kubectl get pods
 NAME                                READY     STATUS    RESTARTS   AGE
 hello-kubernetes-3390701390-jds31   1/1       Running   0          1m
+
 ```
 
 Pods are an important part of kubernetes but rather than me going on about them it's best to read up here: https://kubernetes.io/docs/concepts/workloads/pods/pod/
 
 It's also useful to check out the describe functions. Most things have them.
 
-```
+```  bash
+
 kubectl describe deployment <deploymentName>
 
 # Example
@@ -218,20 +262,24 @@ kubectl describe pods <podName>
 
 # Example
 kubectl describe pods hello-kubernetes-3390701390-jds31
+
 ```
 
 ### You have a deployment
+
 Now that you have a deployment, what are you going to do with it?
 
 I am just going to show a few simple things here to give you an idea of what's available. Most of this and much more can be found  [https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/](in these docs).
 
 You will probably want to look at logs a bit. You can look at the logs for a pod with this.
 
-```
+``` bash
+
 kubectl logs <podName>
 
 # Example
 kubectl logs hello-kubernetes-3390701390-jds31
+
 ```
 
 This will give you the logs for this instance of that pod. You can go more in detail, for example in the case where you have a pod with multiple containers. More on that [here](https://kubernetes.io/docs/user-guide/kubectl/v1.6/#logs).
@@ -240,16 +288,20 @@ Now let the world see your amazing app!
 
 First, run get services.
 
-```
+``` bash
+
 kubectl get services
 NAME         CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
 kubernetes   10.55.240.1   <none>        443/TCP   1h
+
 ```
 
 You can see there is no external IP and no mention of the pod we created.
 
-```
+``` bash
+
 kubectl expose deployment hello-kubernetes --type LoadBalancer --port 80 --target-port=8000
+
 ```
 
 Here we are using the load balancer option.
@@ -268,12 +320,16 @@ We're using LoadBalancer because it's a nice option for us to play around with a
 
 Wait a minute or so for things to work out and then run this.
 
-```
+``` bash
+
 kubectl describe svc hello-kubernetes
+
 ```
 
 You should see something like this.
-```
+
+``` bash
+
 Name:			hello-kubernetes
 Namespace:		default
 Labels:			run=hello-kubernetes
@@ -286,6 +342,7 @@ Port:			<unset>	80/TCP
 NodePort:		<unset>	31390/TCP
 Endpoints:		10.52.0.5:8000
 Session Affinity:	None
+
 ```
 
 The 'Endpoints' value is the internal ip and port of your application running in the cluster. 
@@ -296,8 +353,10 @@ This value: LoadBalancer Ingress:	104.154.182.255 is what we can use to talk to 
 
 This for me was the first really cool thing I came across when playing around with kubernetes. Now our application is deployed, we can attach an autoscaler to it. Here is a command we can use to do that.
 
-```
+``` bash
+
 kubectl autoscale deployment hello-kubernetes --cpu-percent=1 --min=4 --max=12
+
 ```
 
 Now we have attached an autoscaler.
@@ -312,13 +371,16 @@ The autoscaler will scale up when cpu is above 10% on average. It will also scal
 
 Try running this.
 
-```
+``` bash
+
 kubectl describe svc hello-kubernetes
+
 ```
 
 You should see something like this.
 
-```
+``` bash
+
 Name:			hello-kubernetes
 Namespace:		default
 Labels:			run=hello-kubernetes
@@ -331,67 +393,81 @@ Port:			<unset>	80/TCP
 NodePort:		<unset>	32063/TCP
 Endpoints:		10.52.0.5:8000,10.52.2.6:8000,10.52.2.7:8000,10.52.2.8:8000
 Session Affinity:	None
+
 ```
 
 Notice we now have 4 endpoints. You could see this with `kubectl get pods` too. The autoscaler has already scaled up to meet the minimum requirements we set.
 
 To see the state of the autoscaler run this.
 
-```
+``` bash
+
 kubectl get hpa
+
 ```
 
 You should see something like this.
 
-```
+``` bash
+
 NAME               REFERENCE                     TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 hello-kubernetes   Deployment/hello-kubernetes   0% / 1%   4         12        4          1m
+
 ```
 
 And just to confirm the number of pods is 4.
 
-```
+``` bash
+
 kubectl get pods
 NAME                                READY     STATUS    RESTARTS   AGE
 hello-kubernetes-3390701390-jds31   1/1       Running   0          3m
 hello-kubernetes-3390701390-q1v74   1/1       Running   0          3m
 hello-kubernetes-3390701390-txg9z   1/1       Running   0          3m
 hello-kubernetes-3390701390-w6kjg   1/1       Running   0          47m
+
 ```
 
 Now the fun part. Let's see autoscaling in action! 
 
 You probably have a better way of doing this (please comment with a suggestion) but what I did here was just run this.
 
-```
+``` bash
+
 while true; do curl -XGET ${IP} & done
 
 # So for my cluster in the above examples that was
 
 while true; do curl -XGET 104.198.145.117 & done
+
 ```
 
 Or something a little safer perhaps.
 
-```
+``` bash
+
 for i in {1..1000}; do curl -XGET ${IP} & done
+
 ```
 
 If you go down the safe route with a limited loop, the timing where you check the following things is important.
 
 After a while you should start to see autoscaling kicking in:
 
-```
+``` bash
+
 kubectl get hpa
 NAME               REFERENCE                     TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 hello-kubernetes   Deployment/hello-kubernetes   3% / 1%   4         12        8          4m
+
 ```
 
 You can see the 'TARGETS' ratio (that's the CPU utilisation) is grown above that which we specified. In my example it's 3% but the autoscaler wants it to be below 1% on average so it should start scaling up to bring that back in balance. 
 
 Check the new pods getting created.
 
-```
+``` bash
+
 kubectl get pods
 NAME                                READY     STATUS    RESTARTS   AGE
 hello-kubernetes-3390701390-1ght4   1/1       Running   0          39s
@@ -402,21 +478,25 @@ hello-kubernetes-3390701390-q1v74   1/1       Running   0          4m
 hello-kubernetes-3390701390-t6s63   1/1       Running   0          39s
 hello-kubernetes-3390701390-txg9z   1/1       Running   0          4m
 hello-kubernetes-3390701390-w6kjg   1/1       Running   0          48m
+
 ```
 
 Don't forget to while loop! Unless you used the for loop of course.
 
 After a minute or 2 check again.
 
-```
+``` bash
+
 kubectl get hpa
 NAME               REFERENCE                     TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 hello-kubernetes   Deployment/hello-kubernetes   0% / 1%   4         12        8          8m
+
 ```
 
 See the pods are terminating.
 
-```
+``` bash
+
 kubectl get pods
 NAME                                READY     STATUS        RESTARTS   AGE
 hello-kubernetes-3390701390-1ght4   1/1       Terminating   0          5m
@@ -427,19 +507,9 @@ hello-kubernetes-3390701390-q1v74   1/1       Running       0          9m
 hello-kubernetes-3390701390-t6s63   1/1       Terminating   0          5m
 hello-kubernetes-3390701390-txg9z   1/1       Running       0          9m
 hello-kubernetes-3390701390-w6kjg   1/1       Running       0          53m
+
 ```
 
 They may already be gone depending how long you waited to check. 
 
 Maybe I am too easily impressed but I just think that is awesome!
-
-
-
-
-
-
-
-
-
-
-
