@@ -5,11 +5,11 @@ moment = require('moment');
 docpadConfig = {
     templateData: {
         site: {
-            title: 'Geeroar Industries',
+            title: 'Realgorithm',
             tagline: 'How to Win Programs and Influence Code',
             description: 'How to Win Programs and Influence Code.',
             logo: '/img/logo.png',
-            url: 'http://geeroar.com/',
+            url: 'http://realgorithm.io/',
             cover: '/img/kb.jpg',
             navigation: [
                 {
@@ -28,7 +28,7 @@ docpadConfig = {
                 name: 'Ruairi O\'Brien',
                 img: '/img/rob.jpg',
                 url: 'https://github.com/ruairitobrien',
-                location: 'Stockholm, SE',
+                location: 'Cork, IE',
                 bio: 'Code. Code. Code. Family stuff. Play video games. Code.'
             },
             george: {

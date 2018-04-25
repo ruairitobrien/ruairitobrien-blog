@@ -222,4 +222,3 @@ I would love to see something like a test-only approach. Perhaps a language wher
 [Bertrand Russell - In Our Time BBC Radio 4 - YouTube](https://www.youtube.com/watch?v=z5JQjcSfUO0)
 
 [Bertrand Russell (Part 1 of 6) Authority and the Individual: Social Cohesion and Human Nature - YouTube](https://www.youtube.com/watch?v=9EF4I7HM0zI)
-
