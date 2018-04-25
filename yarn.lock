@@ -686,10 +686,11 @@ docpad-plugin-browsersync@~2.0.7:
   dependencies:
     browser-sync "^2.9.3"
 
-docpad-plugin-cleanurls@~2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/docpad-plugin-cleanurls/-/docpad-plugin-cleanurls-2.10.0.tgz#533271f403be17356bb8b4756083363d961244b9"
+docpad-plugin-cleanurls@~2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/docpad-plugin-cleanurls/-/docpad-plugin-cleanurls-2.11.0.tgz#531f2b49f18a8119da30f89cf0bfdc6a267ede2a"
   dependencies:
+    editions "^1.3.4"
     safefs "^4.1.0"
     taskgroup "^5.0.1"
 
@@ -735,9 +736,9 @@ docpad-plugin-paged@~2.5.0:
   dependencies:
     taskgroup "~4.2.1"
 
-docpad-plugin-partials@~2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/docpad-plugin-partials/-/docpad-plugin-partials-2.11.0.tgz#1f641e1550aba727b4728c42b964832087d265af"
+docpad-plugin-partials@~2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/docpad-plugin-partials/-/docpad-plugin-partials-2.12.0.tgz#1a7e02f1d6c52fdfb787f0dc334b7551d301e0b1"
   dependencies:
     extendr "^3.2.2"
     taskgroup "^5.0.1"
@@ -1692,11 +1693,7 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment@2.15.2:
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.15.2.tgz#1bfdedf6a6e345f322fe956d5df5bd08a8ce84dc"
-
-moment@2.x.x:
+moment@2.x.x, moment@^2.22.1:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
