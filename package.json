@@ -5,14 +5,14 @@
   "dependencies": {
     "docpad": "~6.79.4",
     "docpad-plugin-browsersync": "~2.0.7",
-    "docpad-plugin-cleanurls": "~2.10.0",
+    "docpad-plugin-cleanurls": "~2.11.0",
     "docpad-plugin-dateurls": "~2.4.0",
     "docpad-plugin-eco": "~2.2.1",
     "docpad-plugin-ghpages": "~2.6.1",
     "docpad-plugin-highlightjs": "~2.5.0",
     "docpad-plugin-marked": "~2.4.0",
     "docpad-plugin-paged": "~2.5.0",
-    "docpad-plugin-partials": "~2.11.0",
+    "docpad-plugin-partials": "~2.12.0",
     "docpad-plugin-rss": "~2.3.1",
     "docpad-plugin-tags": "~2.1.0",
     "moment": "2.15.2"
