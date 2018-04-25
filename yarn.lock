@@ -706,7 +706,7 @@ docpad-plugin-eco@~2.2.1:
   dependencies:
     eco "~1.1.0-rc-3"
 
-docpad-plugin-ghpages@~2.6.1:
+docpad-plugin-ghpages@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/docpad-plugin-ghpages/-/docpad-plugin-ghpages-2.6.1.tgz#50c5f8f500bb552550a883bb44fc94102660ba33"
   dependencies:
