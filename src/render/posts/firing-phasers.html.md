@@ -8,9 +8,9 @@ excerptOther: 'Setting up phaser projects quickly'
 postDate: '2016-11-10'
 date: '2016-11-10'
 tags:
- - Phaser
- - Yeoman
- - JavaScript
+ - phaser
+ - yeoman
+ - javascript
 ---
 
 __TL;DR__ If you want to try my solution to developing with [phaser 2](http://phaser.io/) and es6, try this yeoman generator [here](https://www.npmjs.com/package/generator-fire-phaser).

@@ -8,7 +8,6 @@ excerptOther: 'In the beginning.'
 postDate: '2016-02-02'
 date: '2016-02-02'
 tags:
- - first post
  - blog
  - docpad
  - staticgen
