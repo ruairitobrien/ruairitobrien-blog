@@ -5,8 +5,8 @@ cover: '/img/heads/austin-neill-163306-min.jpg'
 isPost: true
 active: true
 excerptOther: 'Is there any proof that TDD makes better software?'
-postDate: '2017-06-24'
-date: '2017-06-24'
+postDate: '2017-09-26'
+date: '2017-09-26'
 tags:
  - code
  - software

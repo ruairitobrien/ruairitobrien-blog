@@ -33,7 +33,7 @@ Besides using phaser I did not want to complicate things by adding any other fra
 
 ### How?
 
-The first thing I tried to do was use [babel](https://babeljs.io/) and [browserify](http://browserify.org/) on the command line. I have used npm to install phaser and I had a simple JavaScript file that has an `import Phaser from 'phaser'` statement at the top. It didn't start well. I was getting an error saying PIXI was not defined. After digging around the phaser source for a while I realized that the built phaser file assigned some dependencies on the global scope. I noticed in the [phaser node module](https://www.npmjs.com/package/phaser) had those dependencies separated in to their own files too. It occurred to me that I would probably need to use webpack now.
+The first thing I tried to do was use [babel](https://babeljs.io/) and [browserify](http://browserify.org/) on the command line. I have used npm to install phaser and I had a simple JavaScript file that has an `import Phaser from 'phaser'` statement at the top. It didn't start well. I was getting an error saying PIXI was not defined. After digging around the phaser source for a while I realized that the built phaser file assigned some dependencies on the global scope. I noticed that the [phaser node module](https://www.npmjs.com/package/phaser) had those dependencies separated into their own files too. It occurred to me that I would probably need to use webpack now.
 
 I always end up having to use webpack these days. Even though it's a great tool, I always try not to use it because it just seems to add a bunch of complexity. Doesn't seem to be any good way around it here though and I think the config I use is simple enough to be OK.
 
@@ -68,12 +68,18 @@ module: {
 
 That was pretty much the only tricky part.
 
-I am going to be working on a few games in parallel and will probably never finish any of them so to help with that I created a yeoman generator that will generate a project with a webpack configuration and some sample phaser code written in es6.
+I am going to be working on a few games in parallel and will probably never finish any of them, so to help with that I created a yeoman generator that will generate a project with a webpack configuration and some sample phaser code written in es6.
 
 If you would like to use it or just want to see what I needed to do to get it all set up run this command (assuming you have nodejs installed)
 
  ```
  npm i -g yo generator-fire-phaser
+ ```
+ 
+ Or for yarn (assuming you also installed yeoman globally with yarn)
+ 
+ ```
+ yarn global add generator-fire-phaser
  ```
 
  Then in an empty directory run:

@@ -3,7 +3,7 @@ author: 'ruairi'
 title: 'Babel Workflow'
 cover: '/img/heads/small-fresh.jpg'
 isPost: true
-active: true
+active: false
 excerptOther: 'Babel Workflow for ECMAScript 2015.'
 postDate: '2016-02-28'
 date: '2016-02-28'
