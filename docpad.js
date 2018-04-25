@@ -133,7 +133,7 @@ docpadConfig = {
             }
         },
         ghpages: {
-            deployRemote: 'pages',
+            deployRemote: 'target',
             deployBranch: 'master'
         },
         cleanurls: {
